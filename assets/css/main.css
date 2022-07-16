@@ -56,6 +56,12 @@ nav a:hover{
     color: #FF5F00 !important;
 }
 
+nav li{
+    margin-left: 2vh;
+    margin-right: 2vh;
+    font-weight: 100 !important;
+}
+
 /* header */
 .header-container{
   height: 90vh;
@@ -78,7 +84,9 @@ nav a:hover{
 .tagline{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-
+.mobile-header-container{
+    display: none;
+}
 
 /* populer items */
 .populer-items{
@@ -197,53 +205,95 @@ nav a:hover{
     align-items: center;
 }
 
-/* offers */
+/* review container */
 .review-container{
-    height: 100vh;
+    height: 90vh;
     background-image: url('../img/backgrounds/slice.jpg');
-    background-size: cover;
     background-repeat: no-repeat;
+    background-size: cover;
 }
 .review-head{
-    height: 15vh;
+    height: 20vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    letter-spacing: 1vh;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
+.review-body{
+padding-right: 15vh;
+padding-left: 15vh;
+}
 .review-card{
-    background-color:whitesmoke;
+    height: 65vh;
+    width: 50vh;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 3vh;
+    border-radius: 2vh;
+}
+.review-card .card-head{
+    display: flex;
+    justify-content: center;
+}
+.review-card .card-head img{
+    width: 30vh;
+    border-radius: 50%;
+}
+.review-card .card-body{
+    display: flex;
+    justify-content: center;
+}
+.review-card .card-body h6{
+    text-align: justify;
+}
+
+.review-form{
+    background-color: rgba(255, 255, 255, .85);
+    height: 65vh;
+    width: 55vh;
     padding: 5vh;
-    border-radius: 25px;
+    border-radius: 3vh;
 }
-.review-card-header img{
-    width: 30vh !important;
-    box-shadow: 0px 0px 10px black;
+.review-form form label{
+    font-size: 15px;
+    padding: 1vh;
 }
-
-
-
+.review-form form button{
+    background-color: transparent;
+    border: 2px solid #FF5F00;
+    width: 50%;
+    font-weight: 400 !important;
+}
 /* mobile media query */
 @media (max-width: 576px) {
     .header-container{
-        height: 50vh;
+        display: none;
     }
-    .header-body{
-        justify-content: center;
-    }
-    
-    .header-content{
+    .mobile-header-container{
+        height: 80vh;
         display: flex;
         justify-content: center;
         align-items: center;
+        background-image: url('../img/backgrounds/bg-2.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
     }
-    .header-content img{
+    .mobile-header-body{
+        display: flex;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(255, 255, 255, .55);
+        justify-content: center;
+        padding-top: 15vh;
+    }
+    .mobile-header-content{
+        display: flex;
+    }
+    .mobile-header-content img{
         width: 40vh;
     }
-    .header-content .tagline{
-        display: none;
-    }
-    
+
+    /* populer item code */
     .populer-items-head h6{
         font-size: 15px !important;
     }
@@ -251,7 +301,10 @@ nav a:hover{
         display: none;
     }
 
-
+    /* manue code */
+    .menu{
+        height: 350vh;
+    }
     .menu-card-head{
         display: flex;
         text-align: center;
