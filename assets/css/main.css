@@ -62,6 +62,8 @@ nav li{
     font-weight: 100 !important;
 }
 
+
+
 /* header */
 .header-container{
   height: 90vh;
@@ -253,6 +255,31 @@ nav li{
     display: none;
 }
 
+
+/* about us */
+.aboutus{
+    height: 150vh;
+    display: block;
+    padding: 0%;
+    margin: 0%;
+}
+
+.aboutus-chef{
+    height: 70vh;
+    background-color: bisque;
+}
+.chef-head{
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.chef-body{
+    height: 60vh;
+    width: 100%;
+}
+
+
 /* mobile media query */
 @media (max-width: 480px) {
     .header-container{
@@ -284,10 +311,10 @@ nav li{
 
     /* populer item code */
     .populer-items{
-        height: 80vh;
+        height: 90vh;
     }
     .populer-items-head{
-        height: 10vh;
+        height: 15vh;
     }
     .populer-items-head h6, .populer-items-body{
         display: none;
@@ -298,6 +325,7 @@ nav li{
         align-items: center;
     }
     .mobile-populer-item-body .carousel-item .card{
+        height: 70vh !important;
         background-color: rgba(0, 0, 0, .10);
         border: none;
         border-radius: 0vh;
@@ -327,13 +355,13 @@ nav li{
 
     /* review */
     .review-container{
-        height: 85vh;
+        height: 90vh;
     }
     .review-body{
         display: none;
     }
     .review-head{
-        height: 10vh;
+        height: 15vh;
     }
     .review-head h5{
         display: none;
@@ -344,11 +372,12 @@ nav li{
         align-items: center;
     }
     .review-body-mobile .carousel-item{
-        padding-right: 5vh;
-        padding-left: 5vh;
+        padding-right: 2vh;
+        padding-left: 2vh;
     }
     .review-body-mobile .card{
-        padding: 4vh;
+        height: 70vh;
+        padding: 3vh;
         border-radius: 5vh;
         display: flex !important;
         justify-content: center;
@@ -359,6 +388,6 @@ nav li{
         border-radius: 50vh;
     }
     .review-body-mobile .card-body h6{
-        text-align: start;
+        text-align: justify;
     }
 }
