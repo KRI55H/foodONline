@@ -145,6 +145,9 @@ nav li{
     background-color: transparent !important;
     font-weight: 500;
 }
+.mobile-populer-item-body{
+    display: none;
+}
 
 /* menue */
 .menu{
@@ -221,51 +224,37 @@ nav li{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .review-body{
-padding-right: 15vh;
-padding-left: 15vh;
+    padding-right: 15vh;
+    padding-left: 15vh;
 }
-.review-card{
+.review-body .card{
     height: 65vh;
     width: 50vh;
     background-color: rgba(255, 255, 255, 1);
     padding: 3vh;
     border-radius: 2vh;
 }
-.review-card .card-head{
+.review-body .card .card-head{
     display: flex;
     justify-content: center;
 }
-.review-card .card-head img{
+.review-body .card .card-head img{
     width: 30vh;
     border-radius: 50%;
 }
-.review-card .card-body{
+.review-body .card .card-body{
     display: flex;
     justify-content: center;
 }
-.review-card .card-body h6{
+.review-body .card .card-body h6{
     text-align: justify;
 }
+.review-body-mobile{
+    display: none;
+}
 
-.review-form{
-    background-color: rgba(255, 255, 255, .85);
-    height: 65vh;
-    width: 55vh;
-    padding: 5vh;
-    border-radius: 3vh;
-}
-.review-form form label{
-    font-size: 15px;
-    padding: 1vh;
-}
-.review-form form button{
-    background-color: transparent;
-    border: 2px solid #FF5F00;
-    width: 50%;
-    font-weight: 400 !important;
-}
 /* mobile media query */
-@media (max-width: 576px) {
+@media (max-width: 480px) {
     .header-container{
         display: none;
     }
@@ -294,16 +283,33 @@ padding-left: 15vh;
     }
 
     /* populer item code */
-    .populer-items-head h6{
-        font-size: 15px !important;
+    .populer-items{
+        height: 80vh;
     }
-    .populer-items-body{
+    .populer-items-head{
+        height: 10vh;
+    }
+    .populer-items-head h6, .populer-items-body{
         display: none;
     }
+    .mobile-populer-item-body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .mobile-populer-item-body .carousel-item .card{
+        background-color: rgba(0, 0, 0, .10);
+        border: none;
+        border-radius: 0vh;
+        padding: 2vh;
+    }
 
-    /* manue code */
+    /* menu code */
     .menu{
-        height: 350vh;
+        height: 340vh;
+    }
+    .menu .menu-head{
+        height: 10vh;
     }
     .menu-card-head{
         display: flex;
@@ -317,5 +323,42 @@ padding-left: 15vh;
         display: flex;
         justify-content: center;
         text-align: center;
+    }
+
+    /* review */
+    .review-container{
+        height: 85vh;
+    }
+    .review-body{
+        display: none;
+    }
+    .review-head{
+        height: 10vh;
+    }
+    .review-head h5{
+        display: none;
+    }
+    .review-body-mobile{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .review-body-mobile .carousel-item{
+        padding-right: 5vh;
+        padding-left: 5vh;
+    }
+    .review-body-mobile .card{
+        padding: 4vh;
+        border-radius: 5vh;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+    }
+    .review-body-mobile .card img{
+        width: 30vh;
+        border-radius: 50vh;
+    }
+    .review-body-mobile .card-body h6{
+        text-align: start;
     }
 }
