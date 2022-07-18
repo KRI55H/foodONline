@@ -101,12 +101,22 @@ nav li{
 }
 
 /* populer items */
+.populer-items{
+    background-image: url('../img/backgrounds/bg-3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 .populer-items-head{
     height: 20vh;
     display: flex;
 }
 .popitems-head-title{
+    color: aliceblue;
     letter-spacing: 1vh;
+}
+.populer-items-head h6{
+    font-family:monospace;
+    color: aliceblue;
 }
 .populer-items-body{
     height: auto;
@@ -118,7 +128,7 @@ nav li{
 }
 .populer-items-body .card{
     display: block;
-    background-color: rgba(0, 0, 0, .1);
+    background-color: rgba(235, 255, 255, 1);
     border: none;
     border-radius: 0vh;
     margin: 2vh;
@@ -152,9 +162,6 @@ nav li{
     background-color: transparent !important;
     font-weight: 500;
 }
-.mobile-populer-item-body{
-    display: none;
-}
 
 
 /* menue */
@@ -164,7 +171,7 @@ nav li{
     background-size: cover;
 }
 .menu .menu-container{
-    background-color: rgba(255, 255, 255, .90);
+    background-color: rgba(255, 255, 255, .95);
     height: 100%;
     width: 100%;
     display: block;
@@ -212,10 +219,13 @@ nav li{
 }
 
 /* review container */
-.review-container{
-    background-image: url('../img/backgrounds/slice.jpg');
-    background-repeat: no-repeat;
+.review{
+    background-image: url('../img/backgrounds/bg.jpg');
     background-size: cover;
+    background-repeat: no-repeat;
+}
+.review-container{
+    background-color: rgba(255, 255, 255, .25);
 }
 .review-head{
     height: 20vh;
@@ -237,9 +247,9 @@ nav li{
 .review-body .card{
     height: 65vh;
     width: 50vh;
-    background-color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, .90);
     padding: 3vh;
-    border-radius: 2vh;
+    border-radius: 5vh;
 }
 .review-body .card .card-head{
     display: flex;
@@ -257,7 +267,22 @@ nav li{
     text-align: justify;
 }
 
-/*  */
+/* aboutus */
+.aboutus{
+    height: 100vh;
+     background-image: url('../img/backgrounds/slice.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: block;
+}
+
+.aboutus .about-head{
+    height: 15vh;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
 /* mobile media query */
 @media (max-width: 480px) {
     .header-container{
@@ -340,7 +365,6 @@ nav li{
     .review-head h5{
         display: none;
     }
-
     .review-body{
         height: auto;
         display: flex;
