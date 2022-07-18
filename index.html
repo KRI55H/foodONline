@@ -45,9 +45,8 @@
               <a class="nav-link text-dark" href="#aboutus">About Us</a>
             </li>
           </ul>
-          <form class="d-flex">
-            <!-- <button class="btn nav-cart shadow-none" type="submit"><i class="ri-shopping-cart-fill"></i></button> -->
-            <button class="btn nav-cart shadow-none" type="submit">Order online</button>
+          <form class="d-flex" id="cart">
+            <button class="btn nav-cart shadow-none" type="submit"><i class="ri-shopping-cart-fill"></i></button>
           </form>
         </div>
       </div>
@@ -86,106 +85,8 @@
         </div>
       </div>
       <!-- for laptop -->
-      <div class="populer-items-body justify-content-center">
-        <div class="row justify-content-center">
-          <div class="col-auto mb-3">
-            <div class="card text-center" style="width: 20rem;">
-              <div class="card-header">
-                <img src="./assets/img/pizzas/farm-house.png" class="card-img-top" alt="...">
-              </div>
-              <div class="card-body">
-                  <h5 class="card-title">FARM HOUSE</h5>
-                  <h6 class="card-subtitle mt-2 mb-2 text-muted">A pizza that goes ballistic on veggies! crunchy, crisp capsicum and fresh tomatoes</h6>
-                  <h5>&#8377;399/-</h5>
-              </div>
-              <div class="card-footer">
-                <a href="#" class="btn shadow-none">Order Now</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-auto mb-3">
-            <div class="card text-center" style="width: 20rem;">
-              <div class="card-header">
-                <img src="./assets/img/pizzas/tandoori-paneer.png" class="card-img-top" alt="...">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">INDI TANDOORI PANEER</h5>
-                <h6 class="card-subtitle mt-2 mb-2 text-muted">It is hot. It is spicy. Tandoori paneer with capsicum I red paprika I mint mayo</h6>
-                <h5>&#8377;499/-</h5>
-              </div>
-              <div class="card-footer">
-                <a href="#" class="btn shadow-none">Order Now</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-auto mb-3">
-            <div class="card text-center" style="width: 20rem;">
-              <div class="card-header">
-                <img src="./assets/img/pizzas/olive-delight.png" class="card-img-top" alt="...">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">SUPREME OLIVE DELIGHT</h5>
-                <h6 class="card-subtitle mt-2 mb-2 text-muted">Bite into supreme delight of Olives, Onions and Grilled Mushrooms</h6>
-                <h5>&#8377;399/-</h5>
-              </div>
-              <div class="card-footer">
-                <a href="#" class="btn shadow-none">Order Now</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- for mobile -->
-      <div class="mobile-populer-item-body">
-        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="card text-center" style="width: 20rem;">
-                <div class="card-header">
-                  <img src="./assets/img/pizzas/farm-house.png" class="card-img-top" alt="...">
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">FARM HOUSE</h5>
-                    <h6 class="card-subtitle mt-2 mb-2 text-muted">A pizza that goes ballistic on veggies! crunchy, crisp capsicum and fresh tomatoes</h6>
-                    <h5>&#8377;399/-</h5>
-                </div>
-                <div class="card-footer">
-                  <a href="#" class="btn shadow-none">Order Now</a>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="card text-center" style="width: 20rem;">
-                <div class="card-header">
-                  <img src="./assets/img/pizzas/tandoori-paneer.png" class="card-img-top" alt="...">
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">INDI TANDOORI PANEER</h5>
-                  <h6 class="card-subtitle mt-2 mb-2 text-muted">It is hot. It is spicy. Tandoori paneer with capsicum I red paprika I mint mayo</h6>
-                  <h5>&#8377;499/-</h5>
-                </div>
-                <div class="card-footer">
-                  <a href="#" class="btn shadow-none">Order Now</a>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="card text-center" style="width: 20rem;">
-                <div class="card-header">
-                  <img src="./assets/img/pizzas/olive-delight.png" class="card-img-top" alt="...">
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">SUPREME OLIVE DELIGHT</h5>
-                  <h6 class="card-subtitle mt-2 mb-2 text-muted">Bite into supreme delight of Olives, Onions and Grilled Mushrooms</h6>
-                  <h5>&#8377;399/-</h5>
-                </div>
-                <div class="card-footer">
-                  <a href="#" class="btn shadow-none">Order Now</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="populer-items-body" id="popitem-body">
+        
       </div>
     </div>
 
@@ -196,140 +97,8 @@
           <h1>Our Menu</h1>
         </div>
         <div class="menu-body">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="row">
-                <div class="col-md-3 menu-card-head">
-                  <img src="./assets/img/pizzas/deluxe-veggie.png" class="menu-img">
-                </div>
-                <div class="col-md-7 menu-card-body">
-                  <div class="d-block">
-                    <h5>DELUXE VEGGIE</h5>
-                    <div class="item-text">
-                      <h6>For a vegetarian looking for a BIG treat that goes easy on the spices, The onions, capsicum</h6>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-2 pizza-price menu-card-footer">
-                  <h5>₹&nbsp;399/-</h5>
-                </div>
-              </div> 
-              <div class="row">
-                <div class="col-md-3 menu-card-head">
-                  <img src="./assets/img/pizzas/farm-house.png" class="menu-img">
-                </div>
-                <div class="col-md-7 menu-card-body">
-                  <div class="d-block">
-                    <h5>FARM HOUSE</h5>
-                    <div class="item-text">
-                      <h6>A pizza that goes ballistic on veggies!, crisp capsicum, mushrooms and tomatoes
-                      </h6>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-2 menu-card-footer pizza-price">
-                  <h5>₹&nbsp;399/-</h5>
-                </div>
-              </div> 
-              <div class="row">
-                <div class="col-md-3 menu-card-head">
-                  <img src="./assets/img/pizzas/mexican-green.png" class="menu-img">
-                </div>
-                <div class="col-md-7 menu-card-body">
-                  <div class="d-block">
-                    <h5>MEXICAN GREEN</h5>
-                    <div class="item-text">
-                      <h6>Crunchy onions, crisp capsicum, tomatoes and jalapeno with exotic Mexican herbs.</h6>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-2 menu-card-footer pizza-price">
-                  <h5>₹&nbsp;399/-</h5>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3 menu-card-head">
-                  <img src="./assets/img/pizzas/olive-delight.png" class="menu-img">
-                </div>
-                <div class="col-md-7 menu-card-body">
-                  <div class="d-block">
-                    <h5>SUPREME OLIVE DELIGHT</h5>
-                    <div class="item-text">
-                      <h6>Bite into supreme delight of Black Olives, Onions, Grilled Mushrooms</h6>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-2 menu-card-footer pizza-price">
-                  <h5>₹&nbsp;399/-</h5>
-                </div>
-              </div> 
-            </div>
-            <div class="col-md-6">
-              <div class="row">
-                <div class="col-md-3 menu-card-head">
-                  <img src="./assets/img/pizzas/pappey-paneer.png" class="menu-img">
-                </div>
-                <div class="col-md-7 menu-card-body">
-                  <div class="d-block">
-                    <h5>PEPPY PANEER</h5>
-                    <div class="item-text">
-                      <h6>Chunky paneer with crisp capsicum and spicy red pepper - quite a mouthful!</h6>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-2 menu-card-footer pizza-price">
-                  <h5>₹&nbsp;399/-</h5>
-                </div>
-              </div> 
-              <div class="row">
-                <div class="col-md-3 menu-card-head">
-                  <img src="./assets/img/pizzas/tandoori-paneer.png" class="menu-img">
-                </div>
-                <div class="col-md-7 menu-card-body">
-                  <div class="d-block">
-                    <h5>TANDOORI PANEER</h5>
-                    <div class="item-text">
-                      <h6>It is hot. It is spicy. Tandoori paneer with capsicum I red paprika I mint mayo</h6>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-2 menu-card-footer pizza-price">
-                  <h5>₹&nbsp;399/-</h5>
-                </div>
-              </div> 
-              <div class="row">
-                <div class="col-md-3 menu-card-head">
-                  <img src="./assets/img/pizzas/veg-extravagan.png" class="menu-img">
-                </div>
-                <div class="col-md-7 menu-card-body">
-                  <div class="d-block">
-                    <h5>VEG EXTRAVAGANZA</h5>
-                    <div class="item-text">
-                      <h6>Golden corn, black olives, crunchy onions, capsicum, mushrooms, tomatoes and jalapeno</h6>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-2 menu-card-footer pizza-price">
-                  <h5>₹&nbsp;399/-</h5>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3 menu-card-head">
-                  <img src="./assets/img/pizzas/veggie-paradise.png" class="menu-img">
-                </div>
-                <div class="col-md-7 menu-card-body">
-                  <div class="d-block">
-                    <h5>VEGGIE PARADISE</h5>
-                    <div class="item-text">
-                      <h6>Goldern Corn, Black Olives, Capsicum & Red Paprika- with extra cheese to go all around.</h6>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-2 menu-card-footer pizza-price">
-                  <h5>₹&nbsp;399/-</h5>
-                </div>
-              </div>
-            </div>
+          <div class="row" id="menu-body">
+            
           </div>
         </div>
       </div>
@@ -344,119 +113,12 @@
         </div>
       </div>
       <!-- laptop -->
-      <div class="review-body">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card">
-              <div class="card-head">
-                <img src="./user-img/user-1.jpg" alt="" srcset="">
-              </div>
-              <div class="card-body">
-                <div class="text-center">
-                  <div>
-                    <h5>ABHISHEK NARENDRA</h5>
-                    <h6> It’s a great experience. The ambiance is very welcoming and charming. Amazing wines, food and service. Staff are extremely knowledgeable and make great recommendations.</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card">
-              <div class="card-head">
-                <img src="./user-img/user-2.jpg" alt="" srcset="">
-              </div>
-              <div class="card-body">
-                <div class="text-center">
-                  <div>
-                    <h5>ABHISHEK NARENDRA</h5>
-                    <h6> It’s a great experience. The ambiance is very welcoming and charming. Amazing wines, food and service. Staff are extremely knowledgeable and make great recommendations.</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card">
-              <div class="card-head">
-                <img src="./user-img/user-3.jpg" alt="" srcset="">
-              </div>
-              <div class="card-body">
-                <div class="text-center">
-                  <div>
-                    <h5>ABHISHEK NARENDRA</h5>
-                    <h6> It’s a great experience. The ambiance is very welcoming and charming. Amazing wines, food and service. Staff are extremely knowledgeable and make great recommendations.</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- mobile -->
-      <div class="review-body-mobile">
-        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="card">
-                <div class="card-head">
-                  <img src="./user-img/user-1.jpg" alt="" srcset="">
-                </div>
-                <div class="card-body">
-                  <div class="text-center">
-                    <div>
-                      <h5>ABHISHEK NARENDRA</h5>
-                      <h6> It’s a great experience. The ambiance is very welcoming and charming. Amazing wines, food and service. Staff are extremely knowledgeable and make great recommendations.</h6>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="card">
-                <div class="card-head">
-                  <img src="./user-img/user-2.jpg" alt="" srcset="">
-                </div>
-                <div class="card-body">
-                  <div class="text-center">
-                    <div>
-                      <h5>ABHISHEK NARENDRA</h5>
-                      <h6> It’s a great experience. The ambiance is very welcoming and charming. Amazing wines, food and service. Staff are extremely knowledgeable and make great recommendations.</h6>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="card">
-                <div class="card-head">
-                  <img src="./user-img/user-3.jpg" alt="" srcset="">
-                </div>
-                <div class="card-body">
-                  <div class="text-center">
-                    <div>
-                      <h5>ABHISHEK NARENDRA</h5>
-                      <h6> It’s a great experience. The ambiance is very welcoming and charming. Amazing wines, food and service. Staff are extremely knowledgeable and make great recommendations.</h6>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="review-body" id="review-body">
       </div>
     </div>
-    <!-- about us -->
-      <div class="aboutus">
-        <div class="aboutus-chef">
-          <div class="chef-head">
-            <h1>Our Chefs</h1>
-          </div>
-          <div class="chef-body">
 
-          </div>
-        </div>
-      </div>
+    <!-- about us -->
+     
     <!-- footer -->
     
     <!-- script files link -->
@@ -468,14 +130,142 @@
     <!-- extra scripts -->
     <script>
       // loader
-        $(window).on('load',function(){
-          // setTimeout(function(){
-            $("#loader").hide();
-          // },2000);
-        });
-        $(document).ready(function(){
+      $(window).on('load',function(){
+        // setTimeout(function(){
+          $("#loader").hide();
+        // },2000);
+      });
+
+      $(document).ready(function(){
+        // menu items
+        for(i = 0; i<10;i++){
+          $("#menu-body").append(
+          '<div class="col-md-6 menu-card">'
+            + '<div class="row">'
+            +  '<div class="col-md-3 menu-card-head">'
+              +   '<img src="./assets/img/pizzas/deluxe-veggie.png" class="menu-img">'
+              +'</div>'
+              +'<div class="col-md-7 menu-card-body">'
+                + '<div class="d-block">'
+                +  '<h5>DELUXE VEGGIE</h5>'
+                  + '<div class="item-text">'
+                  +  '<h6>For a vegetarian looking for a BIG treat that goes easy on the spices, The onions, capsicum</h6>'
+                  +'</div>'
+                +'</div>'
+              +'</div>'
+              +'<div class="col-md-2 pizza-price menu-card-footer">'
+                +'<h5>₹&nbsp;399/-</h5>'
+              +'</div>'
+            +'</div>'
+          +'</div>');
+        } 
+
+        
+        if(screen.width < 500 ){
+          // today's spacial
+          $('#popitem-body').append(
+            '<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">'
+              +'<div class="carousel-inner" id="popitems-content">  '
+              +'</div>'
+            +'</div>'
+          );
+          for(i = 0; i<3; i++){
+            $('#popitems-content').append(
+            '<div class="carousel-item">'
+              +'<div class="col-auto mb-3">'
+                +'<div class="card text-center" style="width: 20rem;">'
+                  +'<div class="card-header">'
+                    +'<img src="./assets/img/pizzas/tandoori-paneer.png" class="card-img-top" alt="...">'
+                  +'</div>'
+                  +'<div class="card-body">'
+                    +'<h5 class="card-title">INDI TANDOORI PANEER</h5>'
+                    +'<h6 class="card-subtitle mt-2 mb-2 text-muted">It is hot. It is spicy. Tandoori paneer with capsicum I red paprika I mint mayo</h6>'
+                    +'<h5>&#8377;499/-</h5>'
+                  +'</div>'
+                  +'<div class="card-footer">'
+                  +'<a href="#" class="btn shadow-none">Order Now</a>'
+                  +'</div>'
+                +'</div>'
+              +'</div>'
+            +'</div>'
+            )
+          }
+          $('#popitems-content .carousel-item:first').addClass('active');
             
-        });
+            
+          // review by user
+          $("#review-body").append(
+            '<div id="carouselExampleCaptions" class="carousel  slide" data-bs-ride="carousel">'
+              +'<div class="carousel-inner" id="review-content">'
+              +'</div>'
+            +'</div>');
+          for(i = 0; i<3; i++){
+            $("#review-content").append(
+              '<div class="carousel-item">'
+              +'<div class="card">' 
+                + '<div class="card-head">'
+                  + '<img src="./user-img/user-1.jpg" alt="" srcset="">'
+                + '</div>'
+                +'<div class="card-body">'
+                  +'<div class="text-center">'
+                    +' <div>'
+                      +'<h5>ABHISHEK NARENDRA</h5>'
+                      +'<h6> It’s a great experience. The ambiance is very welcoming and charming. Amazing wines, food and service. Staff are extremely knowledgeable and make great recommendations.</h6>'
+                    +'</div>'
+                  +'</div>'
+                +'</div>'
+              +'</div>'
+            +'</div>')
+          }
+          $('#review-content .carousel-item:first').addClass('active');
+        }
+
+        if(screen.width > 500 ){
+          // Today's spacial
+          $('#popitem-body').append('<div class="row justify-content-center" id="popitems-content"></div>');
+          for(i = 0; i<3; i++){
+            $('#popitems-content').append(
+              '<div class="col-auto mb-3">'
+                +'<div class="card text-center" style="width: 20rem;">'
+                  +'<div class="card-header">'
+                    +'<img src="./assets/img/pizzas/tandoori-paneer.png" class="card-img-top" alt="...">'
+                  +'</div>'
+                  +'<div class="card-body">'
+                    +'<h5 class="card-title">INDI TANDOORI PANEER</h5>'
+                    +'<h6 class="card-subtitle mt-2 mb-2 text-muted">It is hot. It is spicy. Tandoori paneer with capsicum I red paprika I mint mayo</h6>'
+                    +'<h5>&#8377;499/-</h5>'
+                  +'</div>'
+                  +'<div class="card-footer">'
+                  +'<a href="#" class="btn shadow-none">Order Now</a>'
+                  +'</div>'
+                +'</div>'
+              +'</div>'
+            )
+          }
+          
+          // review
+          $("#review-body").append('<div class="row" id="review-content"></div>')
+          for(i = 0; i<3; i++){
+            $("#review-content").append(
+              '<div class="col-md-4">'
+              +'<div class="card">' 
+              + '<div class="card-head">'
+                + '<img src="./user-img/user-1.jpg" alt="" srcset="">'
+              + '</div>'
+              +'<div class="card-body">'
+                +'<div class="text-center">'
+                  +' <div>'
+                    +'<h5>ABHISHEK NARENDRA</h5>'
+                    +'<h6> It’s a great experience. The ambiance is very welcoming and charming. Amazing wines, food and service. Staff are extremely knowledgeable and make great recommendations.</h6>'
+                  +'</div>'
+                +'</div>'
+              +'</div>'
+            +'</div>'
+            +'</div>')
+          }
+        }
+
+      });
     </script>
 </body>
 </html>

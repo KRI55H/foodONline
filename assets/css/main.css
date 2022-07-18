@@ -1,3 +1,13 @@
+/* 
+@media screen and (max-width: 991px) {}
+@media screen and (max-width: 767px) {}
+@media screen and (max-width: 479px) {} 
+*/
+
+
+
+
+
 /* screen loader */
 #loader {
     background-color: white;
@@ -91,25 +101,20 @@ nav li{
 }
 
 /* populer items */
-.populer-items{
-    height: 100vh;
-}
-
 .populer-items-head{
     height: 20vh;
     display: flex;
 }
-
 .popitems-head-title{
     letter-spacing: 1vh;
 }
-
 .populer-items-body{
+    height: auto;
     padding-left: 10vh;
     padding-right: 10vh;
-    padding-top: 1vh;
-    padding-bottom: 1vh;
+    padding-bottom: 5vh;
     display: flex;
+    justify-content: center;
 }
 .populer-items-body .card{
     display: block;
@@ -151,50 +156,46 @@ nav li{
     display: none;
 }
 
+
 /* menue */
 .menu{
-    height: 100vh;
-    max-height: max-content;
     background-image: url('../img/backgrounds/menu.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
-
 .menu .menu-container{
     background-color: rgba(255, 255, 255, .90);
     height: 100%;
     width: 100%;
     display: block;
 }
-
 .menu-container .menu-head{
     height: 15vh;
     display: flex;
     letter-spacing: 1vh;
 }
-
 .menu-container .menu-body{
-    height: 85vh;
+    height: auto;
     padding-left: 10vh;
     padding-right: 10vh;
+    padding-bottom: 5vh;
 }
-
 .menu-img{
     height: 20vh;
     width: 20vh;
 }
-
 .pizza-price{
     font-weight: 800;
     color: tomato;
 }
-
 .item-text{
     color: gray;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 100 !important;
 }
-
+.menu-card{
+    padding: 1% !important;
+}
 .menu-card-head{
     display: flex;
     align-items: center;
@@ -212,7 +213,6 @@ nav li{
 
 /* review container */
 .review-container{
-    height: 90vh;
     background-image: url('../img/backgrounds/slice.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -226,8 +226,13 @@ nav li{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .review-body{
+    height: auto;
     padding-right: 15vh;
     padding-left: 15vh;
+    padding-bottom: 5vh;
+}
+.review-body .col-md-4{
+    padding: 1%;
 }
 .review-body .card{
     height: 65vh;
@@ -251,35 +256,8 @@ nav li{
 .review-body .card .card-body h6{
     text-align: justify;
 }
-.review-body-mobile{
-    display: none;
-}
 
-
-/* about us */
-.aboutus{
-    height: 150vh;
-    display: block;
-    padding: 0%;
-    margin: 0%;
-}
-
-.aboutus-chef{
-    height: 70vh;
-    background-color: bisque;
-}
-.chef-head{
-    height: 10vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.chef-body{
-    height: 60vh;
-    width: 100%;
-}
-
-
+/*  */
 /* mobile media query */
 @media (max-width: 480px) {
     .header-container{
@@ -310,34 +288,36 @@ nav li{
     }
 
     /* populer item code */
-    .populer-items{
-        height: 90vh;
-    }
     .populer-items-head{
         height: 15vh;
     }
-    .populer-items-head h6, .populer-items-body{
+    .populer-items-head h6{
         display: none;
     }
-    .mobile-populer-item-body{
+    .populer-item-body{
+        height: auto;
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: 5%;
+        padding-top: 0%;
     }
-    .mobile-populer-item-body .carousel-item .card{
+    .populer-item-body .carousel-item .card{
         height: 70vh !important;
         background-color: rgba(0, 0, 0, .10);
         border: none;
         border-radius: 0vh;
-        padding: 2vh;
     }
 
     /* menu code */
-    .menu{
-        height: 340vh;
+    #cart{
+        display: none !important;
     }
     .menu .menu-head{
         height: 10vh;
+    }
+    .menu-card{
+        padding: 1% !important;
     }
     .menu-card-head{
         display: flex;
@@ -354,40 +334,35 @@ nav li{
     }
 
     /* review */
-    .review-container{
-        height: 90vh;
-    }
-    .review-body{
-        display: none;
-    }
     .review-head{
         height: 15vh;
     }
     .review-head h5{
         display: none;
     }
-    .review-body-mobile{
+
+    .review-body{
+        height: auto;
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: 5%;
+        padding-top: 0%;
     }
-    .review-body-mobile .carousel-item{
-        padding-right: 2vh;
-        padding-left: 2vh;
-    }
-    .review-body-mobile .card{
+    .review-body .card{
         height: 70vh;
+        width: auto;
         padding: 3vh;
         border-radius: 5vh;
         display: flex !important;
         justify-content: center;
         align-items: center;
     }
-    .review-body-mobile .card img{
+    .review-body .card img{
         width: 30vh;
         border-radius: 50vh;
     }
-    .review-body-mobile .card-body h6{
+    .review-bod .card-body h6{
         text-align: justify;
     }
 }
