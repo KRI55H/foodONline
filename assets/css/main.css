@@ -53,8 +53,8 @@ nav{
 }
 nav a{
     color: white !important;
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: 400;
 }
 nav .active{
     color: #FF5F00 !important;
@@ -67,8 +67,8 @@ nav a:hover{
 }
 
 nav li{
-    margin-left: 2vh;
-    margin-right: 2vh;
+    margin-left: 1vh;
+    margin-right: 1vh;
     font-weight: 100 !important;
 }
 
@@ -99,24 +99,63 @@ nav li{
 .mobile-header-container{
     display: none;
 }
+/* testimonials */
+.testimonials{
+    background-color: white;
+    height: auto;
+    display: flex;
+    padding: 5vh;
+    align-items: center;
+    justify-content: center;
+}
+.t-card{
+    border: none;
+    padding: 2vh;
+}
+.t-card .card-head{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.t-img{
+    background-color: rgba(255,95,0,.7);
+    width: 40%;
+    padding: 8%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+}
+.t-card .card-head img{
+    width: 100%;
+}
+.t-card .card-body{
+    text-align: center;
+    font-size: 25px;
+}
+.t-card .card-footer{
+    text-align: justify;
+}
 
 /* populer items */
 .populer-items{
-    background-image: url('../img/backgrounds/bg-3.jpg');
-    background-size: cover;
+    background-image: url('../img/backgrounds/bg.jpg');
     background-repeat: no-repeat;
+    background-size: cover;
+}
+.populer-item-container{
+    background-color: rgba(255, 255, 255, .35);
 }
 .populer-items-head{
     height: 20vh;
     display: flex;
 }
 .popitems-head-title{
-    color: aliceblue;
+    color: black;
     letter-spacing: 1vh;
 }
 .populer-items-head h6{
     font-family:monospace;
-    color: aliceblue;
+    color: black;
 }
 .populer-items-body{
     height: auto;
@@ -128,9 +167,9 @@ nav li{
 }
 .populer-items-body .card{
     display: block;
-    background-color: rgba(235, 255, 255, 1);
+    background-color: rgba(255,255,255,.95);
     border: none;
-    border-radius: 0vh;
+    border-radius: 5vh;
     margin: 2vh;
     padding: 1vh;
     height: 100%;
@@ -138,14 +177,14 @@ nav li{
 .card .card-header{
     background-color: transparent !important;
     border: none !important;
-    height: 50% !important;
+    height: 45% !important;
 }
 .card-header .card-img-top{
-    width: 70%;
+    width: 60%;
 }
 
 .card .card-body{
-    height: 30% !important;
+    height: 35% !important;
     max-height: 35% !important;
 }
 .card-body .card-subtitle{
@@ -155,14 +194,13 @@ nav li{
     height: 10% !important;
     border: none !important;
     background-color: transparent !important;
-    padding: 0;
+    padding: 5% !important ;
 }
 .card-footer .btn{
     border: 2px solid #FF5F00 !important;
     background-color: transparent !important;
     font-weight: 500;
 }
-
 
 /* menue */
 .menu{
@@ -218,71 +256,45 @@ nav li{
     align-items: center;
 }
 
-/* review container */
-.review{
-    background-image: url('../img/backgrounds/bg.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-.review-container{
-    background-color: rgba(255, 255, 255, .25);
-}
-.review-head{
-    height: 20vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    letter-spacing: 1vh;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-.review-body{
+
+/* about us container */
+.about-us{
     height: auto;
-    padding-right: 15vh;
-    padding-left: 15vh;
-    padding-bottom: 5vh;
 }
-.review-body .col-md-4{
-    padding: 1%;
+.about-us-container{
+    background-color: rgba(255, 255, 255, .25);
+    width: 100%;
+    display: flex;
+    padding: 5vh;
+    margin: 0;
 }
-.review-body .card{
-    height: 65vh;
-    width: 50vh;
-    background-color: rgba(255, 255, 255, .90);
-    padding: 3vh;
+.about-us-container .col-auto{
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.about-us-container .card{
+    height: auto !important;
+    background-color: transparent;
+    border: none;
+}
+.about-us-container .card-body{
+    padding: none;
+}
+.about-us-container form{
+    width: 80vh;
+    background-color: rgba(255, 255, 255, .85);
+    padding: 5vh;
     border-radius: 5vh;
 }
-.review-body .card .card-head{
-    display: flex;
-    justify-content: center;
-}
-.review-body .card .card-head img{
-    width: 30vh;
-    border-radius: 50%;
-}
-.review-body .card .card-body{
-    display: flex;
-    justify-content: center;
-}
-.review-body .card .card-body h6{
-    text-align: justify;
+.about-us-container .btn{
+    background-color: #FF5F00;
+    border: none;
+    width: 40%;
 }
 
-/* aboutus */
-.aboutus{
-    height: 100vh;
-     background-image: url('../img/backgrounds/slice.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    display: block;
-}
 
-.aboutus .about-head{
-    height: 15vh;
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-}
 /* mobile media query */
 @media (max-width: 480px) {
     .header-container{
@@ -301,6 +313,7 @@ nav li{
         display: flex;
         height: 100%;
         width: 100%;
+ 
         background-color: rgba(255, 255, 255, .55);
         justify-content: center;
         padding-top: 15vh;
@@ -313,6 +326,13 @@ nav li{
     }
 
     /* populer item code */
+    .populer-items{
+        background-image: url('../img/backgrounds/bg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: auto;
+    }
     .populer-items-head{
         height: 15vh;
     }
@@ -320,7 +340,7 @@ nav li{
         display: none;
     }
     .populer-item-body{
-        height: auto;
+        height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -328,7 +348,6 @@ nav li{
         padding-top: 0%;
     }
     .populer-item-body .carousel-item .card{
-        height: 70vh !important;
         background-color: rgba(0, 0, 0, .10);
         border: none;
         border-radius: 0vh;
@@ -356,37 +375,5 @@ nav li{
         display: flex;
         justify-content: center;
         text-align: center;
-    }
-
-    /* review */
-    .review-head{
-        height: 15vh;
-    }
-    .review-head h5{
-        display: none;
-    }
-    .review-body{
-        height: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 5%;
-        padding-top: 0%;
-    }
-    .review-body .card{
-        height: 70vh;
-        width: auto;
-        padding: 3vh;
-        border-radius: 5vh;
-        display: flex !important;
-        justify-content: center;
-        align-items: center;
-    }
-    .review-body .card img{
-        width: 30vh;
-        border-radius: 50vh;
-    }
-    .review-bod .card-body h6{
-        text-align: justify;
     }
 }
