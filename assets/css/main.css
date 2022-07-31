@@ -4,10 +4,6 @@
 @media screen and (max-width: 479px) {} 
 */
 
-
-
-
-
 /* screen loader */
 #loader {
     background-color: white;
@@ -28,6 +24,7 @@
     width: 200px;
 }
 
+
 /* body */
 body{
     scroll-behavior: smooth;
@@ -37,6 +34,9 @@ body{
 nav{
     border: none !important;
     border-radius: 0 !important;
+    /* position: fixed !important;
+    width: 100%;
+    overflow: hidden !important; */
 }
 .nav-container{
     display: flex;
@@ -65,14 +65,11 @@ nav .active a{
 nav a:hover{
     color: #FF5F00 !important;
 }
-
 nav li{
     margin-left: 1vh;
     margin-right: 1vh;
     font-weight: 100 !important;
 }
-
-
 
 /* header */
 .header-container{
@@ -99,6 +96,7 @@ nav li{
 .mobile-header-container{
     display: none;
 }
+
 /* testimonials */
 .testimonials{
     background-color: white;
@@ -136,9 +134,11 @@ nav li{
     text-align: justify;
 }
 
+
 /* populer items */
 .populer-items{
     background-image: url('../img/backgrounds/bg.jpg');
+    
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -159,30 +159,31 @@ nav li{
 }
 .populer-items-body{
     height: auto;
-    padding-left: 10vh;
-    padding-right: 10vh;
+    padding-left: 5vh;
+    padding-right: 5vh;
     padding-bottom: 5vh;
     display: flex;
     justify-content: center;
 }
 .populer-items-body .card{
     display: block;
-    background-color: rgba(255,255,255,.95);
+    background-color: rgba(255, 255, 255, .9);
     border: none;
-    border-radius: 5vh;
-    margin: 2vh;
+    border-radius: 4vh !important;
     padding: 1vh;
     height: 100%;
 }
 .card .card-header{
     background-color: transparent !important;
     border: none !important;
-    height: 45% !important;
+    height: 35% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .card-header .card-img-top{
-    width: 60%;
+    width: 70% !important;
 }
-
 .card .card-body{
     height: 35% !important;
     max-height: 35% !important;
@@ -198,13 +199,18 @@ nav li{
 }
 .card-footer .btn{
     border: 2px solid #FF5F00 !important;
-    background-color: transparent !important;
+    background-color: transparent;
     font-weight: 500;
 }
+.card-footer .btn:hover{
+    background-color: #FF5F00;
+}
+
 
 /* menue */
 .menu{
     background-image: url('../img/backgrounds/menu.jpg');
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -260,19 +266,20 @@ nav li{
 /* about us container */
 .about-us{
     height: auto;
+    background-image: url('../img/backgrounds/event_bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color:whitesmoke;
 }
 .about-us-container{
-    background-color: rgba(255, 255, 255, .25);
+    background-color: rgba(255, 255, 225, .35);
     width: 100%;
     display: flex;
-    padding: 5vh;
+    
     margin: 0;
-}
-.about-us-container .col-auto{
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 10vh;
+    
 }
 .about-us-container .card{
     height: auto !important;
@@ -281,20 +288,34 @@ nav li{
 }
 .about-us-container .card-body{
     padding: none;
-}
-.about-us-container form{
-    width: 80vh;
-    background-color: rgba(255, 255, 255, .85);
-    padding: 5vh;
-    border-radius: 5vh;
-}
-.about-us-container .btn{
-    background-color: #FF5F00;
-    border: none;
-    width: 40%;
+    font-weight: 400;
 }
 
+/* owl slider */
+.owl-carousel {
+    position: relative !important;
+}
+.owl-nav{
+    display: none !important;
+}
 
+/* model style */
+.modal-dialog {
+    position: fixed;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: auto;
+    height: 100%;
+    right: 0px;
+}
+.modal-content {
+    height: 100%;
+}
+
+/* swal style */
+.swal-wide{
+    width: 350px !important;
+}
 /* mobile media query */
 @media (max-width: 480px) {
     .header-container{
@@ -375,5 +396,33 @@ nav li{
         display: flex;
         justify-content: center;
         text-align: center;
+    }
+
+    /* about us */
+    .about-us{
+        height: auto;
+        background-image: unset;
+        background-color:whitesmoke;
+    }
+    .about-us-container{
+        background-color: rgba(255, 255, 225, .35);
+        width: 100%;
+        display: flex;
+        margin: 0;
+        padding: 2vh;
+    }
+    .about-us-container .card{
+        height: auto !important;
+        background-color: transparent;
+        border: none;
+    }
+    .about-us .card-header{
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .about-us-container .card-body{
+        padding: none;
+        font-weight: 400;
+        text-align: justify;
     }
 }
