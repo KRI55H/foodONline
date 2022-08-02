@@ -272,33 +272,25 @@ nav li{
 
 
 /* about us container */
-.about-us{
-    height: auto;
-    background-image: url('../img/backgrounds/event_bg.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color:whitesmoke;
-}
 .about-us-container{
     background-color: rgba(255, 255, 225, .35);
     width: 100%;
     display: flex;
-    
     margin: 0;
-    padding: 10vh;
-    
 }
-.about-us-container .card{
-    height: auto !important;
-    background-color: transparent;
-    border: none;
+.about-us-head{
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.about-us-container .card-body{
-    padding: none;
-    font-weight: 400;
+.about-us-body{
+    height: auto;
+    text-align: justify;
+    padding-left: 10vh;
+    padding-right: 10vh;
+    padding-bottom: 5vh;
 }
-
 /* owl slider */
 .owl-carousel {
     position: relative !important;
@@ -479,31 +471,18 @@ nav li{
     }
 
     /* about us */
-    .about-us{
-        height: auto;
-        background-image: unset;
-        background-color:whitesmoke;
-    }
-    .about-us-container{
-        background-color: rgba(255, 255, 225, .35);
-        width: 100%;
+    .about-us-head{
+        height: 15vh;
         display: flex;
-        margin: 0;
-        padding: 2vh;
+        align-items: center;
+        justify-content: center;
     }
-    .about-us-container .card{
-        height: auto !important;
-        background-color: transparent;
-        border: none;
-    }
-    .about-us .card-header{
-        padding: 0 !important;
-        margin: 0 !important;
-    }
-    .about-us-container .card-body{
-        padding: none;
-        font-weight: 400;
+    .about-us-body{
+        height: auto;
         text-align: justify;
+        padding-left: 5vh;
+        padding-right: 5vh;
+        padding-bottom: 5vh;
     }
     /* cart */
     .cart-head img{
