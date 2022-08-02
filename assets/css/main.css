@@ -27,7 +27,15 @@
 
 /* body */
 body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url('../img/backgrounds/slice.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     scroll-behavior: smooth;
+
 }
 
 /* navigation bar */
@@ -316,6 +324,81 @@ nav li{
 .swal-wide{
     width: 350px !important;
 }
+
+/* cart  */
+.cart-head{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cart-head img{
+    width: 100px;
+}
+.cart-body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cart-footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+
+/* resurvation page */
+
+/* resurvation form */
+
+.register-form{
+    padding: 5vh;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-container{
+    width: 80%;
+    background-color: rgba(255, 255, 255, .9);
+    padding: 5vh;
+    border-radius: 2vh !important;
+}
+
+.form-img{
+    height: 100%;
+    width: 100%;
+    background-image: url('../img/backgrounds/resurvation.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 2vh !important;
+}
+.form-control{
+    border-radius: 1vh;
+}
+.table-img{
+    width: 100%;
+    background-color: rgba(0, 0, 0, .10);
+    transition: 1s ease;
+    border-radius: 2vh;
+}
+.register-btn{
+    width: 100%;
+    background-color: transparent;
+    border: 2px solid #FF5F00 !important;
+    color: #000 !important;
+    font-weight: 600;
+    border-radius: 1vh !important;
+}
+.register-btn:hover{
+    background-color: #FF5F00;
+}
+
 /* mobile media query */
 @media (max-width: 480px) {
     .header-container{
@@ -375,9 +458,6 @@ nav li{
     }
 
     /* menu code */
-    #cart{
-        display: none !important;
-    }
     .menu .menu-head{
         height: 10vh;
     }
@@ -424,5 +504,25 @@ nav li{
         padding: none;
         font-weight: 400;
         text-align: justify;
+    }
+    /* cart */
+    .cart-head img{
+        width: 70px;
+    }
+
+    /* REGISTRATION FORM */
+    .register-form{
+        padding: 5vh;
+        margin-top: 1%;
+        margin-bottom: 1%;
+        margin: auto;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .form-container{
+        width: 100%;
+        padding: 3vh;
     }
 }
