@@ -35,14 +35,11 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     scroll-behavior: smooth;
-
 }
 .btn-primary{
     background-color:#FF5F00 !important;
-    border-radius: 10% !important;
     box-shadow: none !important;
     border: none !important;
-    font-size: 20px;
 }
 
 /* navigation bar */
@@ -298,6 +295,14 @@ nav li{
     padding-right: 10vh;
     padding-bottom: 5vh;
 }
+.about-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about-img img{
+    width: 75%;
+}
 /* owl slider */
 .owl-carousel {
     position: relative !important;
@@ -307,7 +312,7 @@ nav li{
 }
 
 /* model style */
-.modal-dialog {
+.cart .modal-dialog {
     position: fixed;
     margin: 0 !important;
     padding: 0 !important;
@@ -315,7 +320,7 @@ nav li{
     height: 100%;
     right: 0px;
 }
-.modal-content {
+.cart .modal-content {
     height: 100%;
 }
 
