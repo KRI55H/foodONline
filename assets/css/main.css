@@ -338,8 +338,9 @@ nav li{
 }
 
 /* swal style */
-.swal-wide{
-    width: 350px !important;
+.swal2-container .swal2-popup{
+    width: 30%;
+    border-radius: 5vh;
 }
 
 /* cart  */
@@ -525,7 +526,12 @@ nav li{
     }
     /* cart */
     .cart-head img{
-        width: 70px;
+        width: 100%;
+    }
+    /* swal style */
+    .swal2-container .swal2-popup{
+        width: 100%;
+        border-radius: 5vh;
     }
 
     /* REGISTRATION FORM */

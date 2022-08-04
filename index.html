@@ -256,7 +256,7 @@
           <div class="modal-header">
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body p-4" id="cart-modal">
+          <div class="modal-body" id="cart-modal">
               
             <!-- <div class="row p-3 m-3 bg-dark rounded-3">
               <div class="col-md-5 menu-card-head">
@@ -274,8 +274,8 @@
             </div> -->
               
           </div>
-          <div class="modal-footer justify-content-center">
-            <button type="button" class="btn btn-dark w-50">PLACE ORDER</button>
+          <div class="modal-footer justify-content-end">
+            <button type="button" class="btn btn-primary w-50">PLACE ORDER</button>
           </div>
         </div>
       </div>
@@ -454,7 +454,6 @@
 
             }
       });
-
       //password strength
       $("#password1").keyup(function (){
             let string = $(this).val();
@@ -486,18 +485,18 @@
       for(i=0; i<5; i++){
         $("#cart-modal").append(
           '<div class="row border-bottom">'
-              +'<div class="col-md-4 col-auto cart-head">'
+              +'<div class="col-md-4 col-4 cart-head">'
                 +'<img src="./assets/img/pizzas/deluxe-veggie.png">'
                 +'</div>'
-                +'<div class="col-md-4 col-auto cart-body">'
+                +'<div class="col-md-4 col-4 cart-body">'
                   +'<div class="d-block">'
                   +'<label >DELUXEVEGGIE</label>'
                   + '</div>'
                   +'</div>'
-                +'<div class="col-md-2 col-auto cart-footer">'
+                +'<div class="col-md-2 col-2 cart-footer">'
                   +'<span>₹&nbsp;399/-</span>'
                   +'</div>'
-               + '<div class="col-md-2 col-auto text-danger justify-content-center align-items-center d-flex">'
+               + '<div class="col-md-2 col-2 text-danger justify-content-center align-items-center d-flex">'
               +    '<h3><i class="ri-close-circle-line" id="remove-item"></i></h3>'
              + '</div>'
             +'</div>'
@@ -534,19 +533,51 @@
       }
 
 
-      $(document).on('click',"#remove-item",function(){
-        Swal.fire(
-                    'Good job!',
-                    'You clicked the button!',
-                    'success'
-                  )
+      // swals 
+      $("#loginForm").submit(function(e){
+        e.preventDefault();
+        Swal.fire({
+          title: 'Failed',
+          text: 'Username or password must be wrong.',
+          icon: 'error',
+          timer: 2000,
+          showCancelButton: false,
+          showConfirmButton: false
+        })
       });
+
+      $("#registerForm").submit(function(e){
+        e.preventDefault();
+        Swal.fire({
+          title: 'Failed',
+          text: 'Email address has been registerd already.',
+          icon: 'warning',
+          timer: 2000,
+          showCancelButton: false,
+          showConfirmButton: false
+        })
+      })
+
+      $(document).on('click',"#remove-item",function(){
+        Swal.fire({
+          title: 'Success',
+          text: 'Item has been removed successfully.',
+          icon: 'success',
+          timer: 2000,
+          showCancelButton: false,
+          showConfirmButton: false
+        })
+      });
+
       $(document).on('click',"#add-to-cart",function(){
-        Swal.fire(
-                    'Good job!',
-                    'You clicked the button!',
-                    'success'
-                  )
+        Swal.fire({
+          title: 'Success',
+          text: 'Item has been added to cart.',
+          icon: 'success',
+          timer: 2000,
+          showCancelButton: false,
+          showConfirmButton: false
+        })
       });
 
     });
