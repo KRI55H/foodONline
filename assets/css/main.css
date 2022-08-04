@@ -24,6 +24,19 @@
     width: 200px;
 }
 
+/* password strength */
+.password-strength{
+    width: 0px;
+    height: 5px;
+    border-radius: 5px;
+}
+.password-strength-background{
+    background-color: rgba(0,0,0,.1);
+    height: 7px;
+    padding: 1px;
+    border-radius: 5px;
+    width: 100%;
+}
 
 /* body */
 body{
@@ -36,7 +49,7 @@ body{
     background-position: center;
     scroll-behavior: smooth;
 }
-.btn-primary{
+.btn-primary{   
     background-color:#FF5F00 !important;
     box-shadow: none !important;
     border: none !important;
@@ -128,7 +141,7 @@ nav li{
     justify-content: center;
 }
 .t-img{
-    background-color: rgba(255,95,0,.7);
+    background-image: linear-gradient(#FF5F00,#ff0f0f,#f00f0f);
     width: 40%;
     padding: 8%;
     border-radius: 50%;
@@ -350,12 +363,24 @@ nav li{
 
 }
 
+/* login - register */
+.btn-form{
+    background-color: white;
+    color: #FF5F00;
+    border: none;
+    border-radius: 5px;
+    transition: .3s ease-in-out;
+}
+.btn-form:hover{
+    color: #f0f0f0;
+    background-image: linear-gradient(210deg,#FF5F00, #ff0f0f);
+}
+.form-active{
+    background-image: linear-gradient(210deg,#FF5F00, #ff0f0f);
+    color: #f0f0f0;
+}
 
-
-/* resurvation page */
-
-/* resurvation form */
-
+/* reservation form */
 .register-form{
     padding: 5vh;
     margin-top: 1%;

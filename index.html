@@ -46,7 +46,7 @@
         </ul>
         <button class="btn nav-cart shadow-none" id="cart" data-bs-toggle="modal" data-bs-target="#cartModal"><i class="ri-shopping-cart-fill"></i></button>
         <button class="btn nav-cart shadow-none ms-3" ><i class="ri-user-fill"></i></button>
-        <button class="btn nav-cart shadow-none ms-3" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+        <button class="btn nav-cart shadow-none ms-3" id="loginBtn" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
       </div>
     </div>
   </nav>
@@ -250,7 +250,7 @@
 
   
   <!-- cart model -->
-    <div class="modal fade model-end cart" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade model-end  cart" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog  modal-dialog-scrollable">
         <div class="modal-content">
           <div class="modal-header">
@@ -282,17 +282,87 @@
     </div>
 
     <!-- login model -->
- 
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-          <div class="modal-body">
-            <div class="form-group w-100">
-              <div class="input-group">
-                <button class="input-group-addon btn shadow-none form-control" style="background-color: #FF5F00;">LOGIN</button>
-                <button class="input-group-addon btn shadow-none form-control" style="background-color: #FF5F00;">REGISTER</button>
-              </div>
+          <div class="modal-header border-0 row ps-4 pe-4">
+            <button class="btn col-4 btn-form p-1 form-active shadow-none" id="login">LOGIN</button>
+            <div class="col-1"></div>
+            <button class="btn col-4 btn-form p-1 shadow-none" id="register">REGISTER</button>
+            <div class="col-3 text-end">
+              <button type="button" class="btn-primary ri-close-line text-dark rounded-circle" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+          </div>
+          <div class="modal-body border-0">
+            <!-- login form -->
+            <form id="loginForm" class="ps-2 pe-2">
+              <h3 class="mb-3">Login</h3>
+              <div class="input-group mb-3 border rounded-3">
+                <span class="input-group-text shadow-none border-0" style="background-color: white;"><i class="ri-mail-line"></i></span>
+                <input type="text" class="form-control shadow-none border-0" id="emailAddress" name="email" placeholder="Email Address" value="">
+              </div>
+              <div class="mb-3">
+                <div class="input-group mb-3 border rounded-3">
+                  <span class="input-group-text shadow-none border-0" style="background-color: white;"><i class="ri-lock-2-line"></i></span>
+                  <input type="password" class="form-control shadow-none border-0" id="password" name="email" placeholder="Password" value="">
+                  <span class="input-group-text shadow-none border-0" id="eye-1" style="background-color: white;"><i class="ri-eye-line"></i></span>
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <div class="text-start col-6">
+                  <input type="checkbox" class="form-check-input shadow-none" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Remember me</label>
+                </div>
+                <div class="text-end col-6">
+                  <a href="#" class="text-muted" style="text-decoration: none;">Forgot password?</a>
+                </div>
+              </div>
+              <div class="text-end">
+                <button type="submit" class="btn btn-primary w-50">Login</button>
+              </div>
+            </form>
+            <!-- register form -->
+            <form id="registerForm" class="ps-2 pe-2" style="display: none;">
+              <h3 class="mb-3">Register</h3>
+              <div class="mb-3">
+                <div class="input-group border rounded-3">
+                  <span class="input-group-text shadow-none border-0" style="background-color: white;"><i class="ri-pencil-line"></i></span>
+                  <input type="text" class="form-control shadow-none border-0" id="Name" name="text" placeholder="Name" value="">
+                </div>
+              </div>
+              <div class="mb-3">
+                <div class="input-group border rounded-3">
+                  <span class="input-group-text shadow-none border-0" style="background-color: white;"><i class="ri-mail-line"></i></span>
+                  <input type="email" class="form-control shadow-none border-0" id="emailAddress" name="email" placeholder="Email Address" value="">
+                </div>
+              </div>
+              <div class="mb-3">
+                <div class="input-group border rounded-3">
+                  <span class="input-group-text shadow-none border-0" style="background-color: white;"><i class="ri-pencil-line"></i></span>
+                  <input type="text" class="form-control shadow-none border-0" id="mobileNumber" name="text" placeholder="Mobile Number" value="">
+                </div>
+              </div>
+              <div class="mb-3">
+                <div class="input-group border rounded-3">
+                  <span class="input-group-text shadow-none border-0" style="background-color: white;"><i class="ri-lock-2-line"></i></span>
+                  <input type="password" class="form-control shadow-none border-0" id="password1" name="email" placeholder="Password" value="">
+                  <span class="input-group-text shadow-none border-0" id="eye-2" style="background-color: white;"><i class="ri-eye-line"></i></span>
+                </div>
+                <div class="mt-1 password-strength-background" >
+                  <div class="password-strength" id="password-strength"></div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <div class="input-group border rounded-3">
+                  <span class="input-group-text shadow-none border-0" style="background-color: white;"><i class="ri-lock-2-line"></i></span>
+                  <input type="password" class="form-control shadow-none border-0" id="confirmPassword" name="email" placeholder="Confirm Password" value="">
+                  <span class="input-group-text shadow-none border-0" id="eye-3" style="background-color: white;"><i class="ri-eye-line"></i></span>
+                </div>
+              </div>
+              <div class="text-end">
+                <button type="submit" class="btn btn-primary w-50">Register</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -313,6 +383,7 @@
         $("#loader").hide();
         },10);
     });
+    
     
     // owl carousel - 1 script
     $('.owl-carousel').owlCarousel({
@@ -335,6 +406,82 @@
     }); 
 
     $(document).ready(function(){
+      // login - register form
+      $("#login, #loginBtn").click(function(){
+        $("#loginForm").show();
+        $("#registerForm").hide();
+        $("#login").addClass("form-active");
+        $("#register").removeClass("form-active");
+      });
+      $("#register").click(function(){
+        $("#loginForm").hide();
+        $("#registerForm").show();
+        $("#login").removeClass("form-active");
+        $("#register").addClass("form-active");
+      });
+      // password hide-show
+      $("#eye-1").click(function(){
+        let type = $("#password").attr('type');
+            if(type == 'password'){
+                $("#password").attr('type','text');
+                $(this).html('<i class="ri-eye-off-line"></i>');
+              }
+              if(type == 'text'){
+                $("#password").attr('type','password');
+                $(this).html('<i class="ri-eye-line"></i>');
+            }
+      });
+      $("#eye-2").click(function(){
+        let type = $("#password1").attr('type');
+            if(type == 'password'){
+                $("#password1").attr('type','text');
+                $(this).html('<i class="ri-eye-off-line"></i>');
+              }
+              if(type == 'text'){
+                $("#password1").attr('type','password');
+                $(this).html('<i class="ri-eye-line"></i>');
+            }
+      });
+      $("#eye-3").click(function(){
+        let type = $("#confirmPassword").attr('type');
+            if(type == 'password'){
+                $("#confirmPassword").attr('type','text');
+                $(this).html('<i class="ri-eye-off-line"></i>');
+              }
+              if(type == 'text'){
+                $("#confirmPassword").attr('type','password');
+                $(this).html('<i class="ri-eye-line"></i>');
+
+            }
+      });
+
+      //password strength
+      $("#password1").keyup(function (){
+            let string = $(this).val();
+            var number = new RegExp("^(?=.*[0-9])");
+            var small = new RegExp("^(?=.*[a-z])");
+            var capital = new RegExp("^(?=.*[A-Z])");
+            var special = new RegExp("^(?=.*[@$!%*#?&])");
+            let sum = 0;
+            if(string.length > 8){ sum += 20; }
+            if($(this).val().match(special)){ sum += 25; }
+            if($(this).val().match(capital)){ sum += 15; }
+            if($(this).val().match(number)){ sum += 25; }
+            if($(this).val().match(small)){ sum += 15; }
+            // increase width
+            $( "#password-strength" ).animate({
+                width : sum+"%"
+            }, 300);
+            // change colour by password strength
+            if(sum <= 40){
+                $("#password-strength").css('background-color','#aa0000');
+            }else if (sum <= 70){
+                $("#password-strength").css('background-color','#fbcb09');
+            }else if(sum == 100){
+                $("#password-strength").css('background-color','#00cc00');
+            }
+        });
+
       // cart
       for(i=0; i<5; i++){
         $("#cart-modal").append(
