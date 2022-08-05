@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\web\IndexController;
+use App\Http\Controllers\web\ReservationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
+Route::get('/',[IndexController::class,'index'])->name('/');
+Route::get('reservation',[ReservationController::class,'reservation'])->name('reservation');
