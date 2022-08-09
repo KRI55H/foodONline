@@ -6,28 +6,33 @@
 <!-- navigation bar -->
 <nav class="navbar navbar-expand-lg bg-light navbar-light"  id="home">
     <div class="container-fluid">
-        <img src="{{asset('public/assets/img/logo.png')}}" alt="foodONline" class="nav-brand">
+        <img src="{{asset('public/assets/img/logo.png')}}" alt="foodONline" class="nav-brand ms-auto me-auto">
         <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon text-dark"></span>
+            <span class="navbar-toggler-icon text-dark"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto me-auto">
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                    <a class="nav-link text-dark @if(request()->segment(1) == ""){{"active"}} @endif" aria-current="page" href="{{route('/')}}">Home</a>
                 </li>
+
                 <li class="nav-item">
-                <a class="nav-link text-dark" href="#menu">Menu</a>
+                    <a class="nav-link text-dark" href="#menu">Menu</a>
                 </li>
+
                 <li class="nav-item">
-                <a class="nav-link text-dark" href="{{route('reservation')}}">Reservation</a>
+                 <a class="nav-link text-dark @if(request()->segment(1) == "reservation"){{"active"}} @endif" href="{{route('reservation')}}">Reservation</a>
                 </li>
+
                 <li class="nav-item">
-                <a class="nav-link text-dark" href="#aboutus">About Us</a>
+                    <a class="nav-link text-dark" href="#aboutus">About Us</a>
                 </li>
             </ul>
-            <button class="btn nav-cart shadow-none" id="cart" data-bs-toggle="modal" data-bs-target="#cartModal"><i class="ri-shopping-cart-fill"></i></button>
-            <button class="btn nav-cart shadow-none ms-3" ><i class="ri-user-fill"></i></button>
-            <button class="btn nav-cart shadow-none ms-3" id="loginBtn" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+            @if(Auth::guard('web')->check())
+                <button class="btn nav-cart shadow-none ms-3" data-bs-toggle="offcanvas" data-bs-target="#userProfile" aria-controls="offcanvasRight"><i class="ri-user-fill"></i></button>
+            @else
+                <button class="btn nav-cart shadow-none ms-3" id="loginBtn" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+            @endif
         </div>
     </div>
 </nav>

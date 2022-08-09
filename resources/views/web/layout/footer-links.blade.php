@@ -2,6 +2,7 @@
 <script src="{{asset('public/assets/libs/bootstrap-5.1.3/dist/js/bootstrap.min.js')}}"></script>
 <!-- jquery -->
 <script src="{{asset('public/assets/js/jquery-3.6.0.min.js')}}"></script>
+<script src="{{asset('public/assets/js/jquery-3.6.0.js')}}"></script>
 <script src="{{asset('public/assets/js/jquery.validate.js')}}"></script>
 <!-- owl carousel -->
 <script src="{{asset('public/assets/js/owl.carousel.js')}}"></script>

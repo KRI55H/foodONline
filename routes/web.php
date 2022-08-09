@@ -14,9 +14,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/welcome', function () {
-    return view('welcome');
-});
+// web routes
+//index routes
 Route::get('/',[IndexController::class,'index'])->name('/');
+
+// register route
+Route::post('register-user',[IndexController::class,'registerUser'])->name('register-user');
+// login route
+Route::post('login-user',[IndexController::class,'loginCheck'])->name('login-user');
+
+
+//reservation routes
 Route::get('reservation',[ReservationController::class,'reservation'])->name('reservation');
