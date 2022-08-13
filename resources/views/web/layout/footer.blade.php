@@ -46,22 +46,6 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body" id="cart-modal">
-
-                <div class="row p-3 m-3 bg-dark rounded-3">
-                  <div class="col-md-5 menu-card-head">
-                    <img src="{{asset('public/assets/img/pizza/deluxe-veggie.png')}}" width="120">
-                    </div>
-                    <div class="col-md-5 menu-card-body">
-                      <div class="d-block">
-                      <label class="text-light">DELUXE VEGGIE</label>
-                      <span class="text-light">₹&nbsp;399/-</span>
-                      </div>
-                    </div>
-                    <div class="col-md-2 pizza-price menu-card-footer">
-                      <h4><i class="ri-close-circle-line"></i></h4>
-                  </div>
-                </div>
-
             </div>
             <div class="modal-footer justify-content-end">
                 <button type="button" class="btn btn-primary w-50">PLACE ORDER</button>
@@ -71,27 +55,65 @@
 </div>
 
 <!-- user profile canvas -->
-<div class="offcanvas offcanvas-end" tabindex="-1" id="userProfile" aria-labelledby="offcanvasRightLabel">
+<div class="offcanvas bg-light offcanvas-end" tabindex="-1" id="userProfile" aria-labelledby="offcanvasRightLabel">
     <div class="offcanvas-header">
-        <h5 id="offcanvasRightLabel">User Settings</h5>
+        <h5 id="offcanvasRightLabel">Profile Settings</h5>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
         <div class="row">
-            <div class="col-12 d-flex align-items-center justify-content-center w-100 mb-3">
-                <div class="bg-light rounded-circle p-2 d-flex" style="height: 200px; width: 200px; overflow: hidden">
-                    <img src="{{asset('public/assets/img/user-img/user-1.jpg')}}" class="w-100 rounded-circle shadow">
+            <form>
+                <div class="col-12 d-flex align-items-center justify-content-center mb-3">
+                    <div class="avatar-upload">
+                        <div class="avatar-edit">
+                            <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                            <label for="imageUpload" class="text-center"><i class="ri-pencil-fill fs-5"></i></label>
+                        </div>
+                        <div class="avatar-preview">
+                            <div id="imagePreview" style="background-image: url('{{asset('public/assets/img/user-img/no-image.png')}}');">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+                <div class="mb-3 ps-3 pe-3">
+                    <div class="input-group border rounded-3">
+                                <span class="input-group-text shadow-none border-0" style="background-color: white;"><i
+                                        class="ri-pencil-line"></i></span>
+                        <input type="text" class="form-control shadow-none border-0" id="name" name="name"
+                               placeholder="Name" value="">
+                    </div>
+                </div>
+                <div class="mb-3 ps-3 pe-3">
+                    <div class="input-group border rounded-3">
+                                <span class="input-group-text shadow-none border-0" style="background-color: white;"><i
+                                        class="ri-mail-line"></i></span>
+                        <input type="email" class="form-control shadow-none border-0" id="email" name="email"
+                               placeholder="Email Address" value="">
+                    </div>
+                </div>
+                <div class="mb-3 ps-3 pe-3">
+                    <div class="input-group border rounded-3">
+                                <span class="input-group-text shadow-none border-0" style="background-color: white;"><i
+                                        class="ri-pencil-line"></i></span>
+                        <input type="text" class="form-control shadow-none border-0" id="mobileNo" name="mobileNo"
+                               placeholder="Mobile Number" value="" maxlength="10">
+                    </div>
+                </div>
+                <div class="mb-3 ps-3 pe-3 text-end">
+                    <button type="submit" class="btn btn-primary w-50">Edit</button>
+                </div>
+            </form>
         </div>
+
+    </div>
+    <div class="offcanvas-bottom">
         <div class="row">
             <div class="col-md-6 col-xs-12 mb-3">
                 <button class="btn nav-cart shadow-none w-100 align-items-center justify-content-center d-flex" id="cart" data-bs-toggle="modal" data-bs-target="#cartModal"><i class="ri-shopping-cart-fill me-3"></i> MY CART</button>
             </div>
             <div class="col-md-6 col-xs-12 mb-3">
-                <a class="btn btn-primary w-100" id="cart" data-bs-toggle="modal" data-bs-target="#cartModal">LOGOUT</a>
+                <a href="{{route('logout')}}" class="btn btn-primary w-100">LOGOUT</a>
             </div>
-
         </div>
     </div>
 </div>
@@ -119,4 +141,19 @@
             + '</div>'
         );
     }
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $('#imagePreview').css('background-image', 'url('+e.target.result +')');
+                $('#imagePreview').hide();
+                $('#imagePreview').fadeIn(650);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $("#imageUpload").change(function() {
+        readURL(this);
+    });
 </script>

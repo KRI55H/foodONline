@@ -22,7 +22,7 @@ Route::get('/',[IndexController::class,'index'])->name('/');
 Route::post('register-user',[IndexController::class,'registerUser'])->name('register-user');
 // login route
 Route::post('login-user',[IndexController::class,'loginCheck'])->name('login-user');
-
+Route::get('logout',[IndexController::class,'logout'])->name('logout');
 
 //reservation routes
 Route::get('reservation',[ReservationController::class,'reservation'])->name('reservation');

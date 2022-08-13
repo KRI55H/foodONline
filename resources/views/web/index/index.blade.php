@@ -167,13 +167,13 @@
     </div>
 
     <!-- offfers -->
-    <div class="partners">
-        <div class="owl-carousel owl-theme" id="partners">
-            <img src="{{asset('public/assets/img/offers/offer-1.jpg')}}">
-            <img src="{{asset('public/assets/img/offers/offer-2.jpg')}}">
-            <img src="{{asset('public/assets/img/offers/offer-3.jpg')}}">
-        </div>
-    </div>
+{{--    <div class="partners">--}}
+{{--        <div class="owl-carousel owl-theme" id="partners">--}}
+{{--            <img src="{{asset('public/assets/img/offers/offer-1.jpg')}}">--}}
+{{--            <img src="{{asset('public/assets/img/offers/offer-2.jpg')}}">--}}
+{{--            <img src="{{asset('public/assets/img/offers/offer-3.jpg')}}">--}}
+{{--        </div>--}}
+{{--    </div>--}}
 
     <!-- about us -->
     <div class="row about-us-container" id="aboutus">

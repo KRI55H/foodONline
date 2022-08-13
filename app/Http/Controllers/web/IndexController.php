@@ -62,4 +62,10 @@ class IndexController extends Controller
             return response()->json(['status'=>0,'message'=>"Failed to Login"]);
         }
     }
+
+    // logout
+    public function logout(){
+        Auth::guard('web')->logout();
+        return redirect()->route('/');
+    }
 }

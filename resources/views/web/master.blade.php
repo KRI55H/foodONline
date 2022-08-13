@@ -8,8 +8,8 @@
 <body>
 @include('web.layout.header')
 @yield('content')
-@include('web.layout.footer')
 @include('web.layout.footer-links')
+@include('web.layout.footer')
 @yield('js')
 </body>
 </html>
