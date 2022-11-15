@@ -17,16 +17,16 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="#menu">Menu</a>
+                    <a class="nav-link text-dark @if(request()->segment(1) == "menu"){{"active"}} @endif" href="{{route('menu')}}">Menu</a>
                 </li>
-
+                @if(Auth::guard('web')->check())
                 <li class="nav-item">
-                 <a class="nav-link text-dark @if(request()->segment(1) == "reservation"){{"active"}} @endif" href="{{route('reservation')}}">Reservation</a>
+                    <a class="nav-link text-dark @if(request()->segment(1) == "reservation"){{"active"}} @endif" href="{{route('reservation')}}">Reservation</a>
                 </li>
-
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="#aboutus">About Us</a>
+                    <a class="nav-link text-dark @if(request()->segment(1) == "orders"){{"active"}} @endif" href="{{route('orders')}}">Orders</a>
                 </li>
+                @endif
             </ul>
             @if(Auth::guard('web')->check())
                 <button class="btn nav-cart shadow-none ms-3" data-bs-toggle="offcanvas" data-bs-target="#userProfile" aria-controls="offcanvasRight"><i class="ri-user-fill"></i></button>

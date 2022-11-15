@@ -2,13 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e341d24-9bad-4d5d-8849-274c847ed411" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/web/orders/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/foodONline.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/foodONline.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/web/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/web/IndexController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/web/ReservationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/web/ReservationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Orders.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Reservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Reservation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/img/user-img/me.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/web/index/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/web/index/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/web/layout/footer-links.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/web/layout/footer-links.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/web/layout/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/web/layout/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/web/layout/header-links.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/web/layout/header-links.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/web/layout/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/web/layout/header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/web/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/web/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/web/reservation/reservation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/web/reservation/reservation.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,7 +28,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" notifyAboutMissingVendor="false" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -37,7 +49,6 @@
       <path value="$PROJECT_DIR$/vendor/fideloper/proxy" />
       <path value="$PROJECT_DIR$/vendor/laravel/tinker" />
       <path value="$PROJECT_DIR$/vendor/laravel/serializable-closure" />
-      <path value="$PROJECT_DIR$/vendor/laravel/framework" />
       <path value="$PROJECT_DIR$/vendor/fruitcake/laravel-cors" />
       <path value="$PROJECT_DIR$/vendor/psy/psysh" />
       <path value="$PROJECT_DIR$/vendor/asm89/stack-cors" />
@@ -77,14 +88,12 @@
       <path value="$PROJECT_DIR$/vendor/sebastian/complexity" />
       <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
       <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
-      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
       <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
       <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
       <path value="$PROJECT_DIR$/vendor/nette/schema" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php81" />
       <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
       <path value="$PROJECT_DIR$/vendor/nette/utils" />
-      <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
       <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
       <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
       <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
@@ -99,7 +108,6 @@
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
       <path value="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php" />
-      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
       <path value="$PROJECT_DIR$/vendor/graham-campbell/result-type" />
       <path value="$PROJECT_DIR$/vendor/league/config" />
       <path value="$PROJECT_DIR$/vendor/league/commonmark" />
@@ -134,13 +142,13 @@
       <path value="$PROJECT_DIR$/vendor/ramsey/collection" />
       <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
       <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
-      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
-      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
-      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
       <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
       <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
       <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
       <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
     </include_path>
   </component>
   <component name="ProjectId" id="2Cwb60ZNN915LxjnnD6HPA4vl0d" />
@@ -156,7 +164,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/foodONline/public/assets/js&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/foodONline&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -199,6 +207,30 @@
       <workItem from="1660159271775" duration="649000" />
       <workItem from="1660228190642" duration="1038000" />
       <workItem from="1660383229754" duration="977000" />
+      <workItem from="1660400280340" duration="663000" />
+      <workItem from="1660404924097" duration="811000" />
+      <workItem from="1660410592757" duration="971000" />
+      <workItem from="1660460164212" duration="3328000" />
+      <workItem from="1660658488717" duration="81000" />
+      <workItem from="1660666488679" duration="3732000" />
+      <workItem from="1660746805504" duration="618000" />
+      <workItem from="1660748653881" duration="5595000" />
+      <workItem from="1660853622138" duration="57000" />
+      <workItem from="1660882825648" duration="55000" />
+      <workItem from="1661053955130" duration="6816000" />
+      <workItem from="1661328723866" duration="19069000" />
+      <workItem from="1661402967354" duration="1136000" />
+      <workItem from="1661407097882" duration="899000" />
+      <workItem from="1661408282617" duration="525000" />
+      <workItem from="1661408923818" duration="836000" />
+      <workItem from="1661667460506" duration="424000" />
+      <workItem from="1661783850442" duration="1380000" />
+      <workItem from="1662274760397" duration="93000" />
+      <workItem from="1666015929020" duration="1204000" />
+      <workItem from="1666017169114" duration="37000" />
+      <workItem from="1666017737495" duration="15000" />
+      <workItem from="1668518991997" duration="82000" />
+      <workItem from="1668519653127" duration="3788000" />
     </task>
     <servers />
   </component>

@@ -11,8 +11,14 @@ class Cart extends Model
     protected $table = "cart";
     protected $fillable = [
         'id',
-        'ref_uid',
-        'ref_pid',
+        'user_id',
+        'product_id',
+        'total',
+        'discount',
+        'delivery_charge',
+        'qty',
+        'order_id',
+        'status',
         'created_at',
         'updated_at',
     ];

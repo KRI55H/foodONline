@@ -2,7 +2,7 @@
 <html>
 <head>
     <link rel="icon" type="image/x-icon" href="{{asset('public/assets/img/favicon.png')}}">
-    @yield('title')
+    <title>@yield('title')</title>
     @include('web.layout.header-links')
 </head>
 <body>

@@ -1,7 +1,5 @@
 @extends('web.master')
-@section('title')
-    <title>foodONline</title>
-@endsection
+@section('title',"Home | foodONline")
 @section('content')
     <!-- header content for laptop -->
     <div class="header-container">
@@ -14,6 +12,7 @@
             </div>
         </div>
     </div>
+
     <!-- header content for mobile view -->
     <div class="mobile-header-container">
         <div class="mobile-header-body">
@@ -166,14 +165,6 @@
         </div>
     </div>
 
-    <!-- offfers -->
-{{--    <div class="partners">--}}
-{{--        <div class="owl-carousel owl-theme" id="partners">--}}
-{{--            <img src="{{asset('public/assets/img/offers/offer-1.jpg')}}">--}}
-{{--            <img src="{{asset('public/assets/img/offers/offer-2.jpg')}}">--}}
-{{--            <img src="{{asset('public/assets/img/offers/offer-3.jpg')}}">--}}
-{{--        </div>--}}
-{{--    </div>--}}
 
     <!-- about us -->
     <div class="row about-us-container" id="aboutus">
@@ -270,7 +261,7 @@
                             <div class="input-group border rounded-3">
                                 <span class="input-group-text shadow-none border-0" style="background-color: white;"><i
                                         class="ri-pencil-line"></i></span>
-                                <input type="text" class="form-control shadow-none border-0" id="mobileNo" name="mobileNo"
+                                <input type="text" class="form-control shadow-none border-0" id="mobileNo" name="mobile_no"
                                        placeholder="Mobile Number" value="" maxlength="10">
                             </div>
                         </div>
@@ -292,14 +283,14 @@
                             <div class="input-group border rounded-3">
                                 <span class="input-group-text shadow-none border-0" style="background-color: white;"><i
                                         class="ri-lock-2-line"></i></span>
-                                <input type="password" class="form-control shadow-none border-0" id="confirmPassword"
-                                       name="confirmPassword" placeholder="Confirm Password" value="">
+                                <input type="password" class="form-control shadow-none border-0" id="confirm_password"
+                                       name="confirm_password" placeholder="Confirm Password" value="">
                                 <span class="input-group-text shadow-none border-0" id="eye-3"
                                       style="background-color: white;"><i class="ri-eye-line"></i></span>
                             </div>
                         </div>
                         <div class="text-end">
-                            <button type="submit" class="btn btn-primary w-50">Register</button>
+                            <button type="submit" id="registerBtn" class="btn btn-primary w-50"><i class="ri-loader-2-line spinner" style="display: none"></i>Register</button>
                         </div>
                     </form>
                 </div>
@@ -356,251 +347,6 @@
         });
 
         $(document).ready(function () {
-            // login - register form
-            $("#login, #loginBtn").click(function () {
-                $("#loginForm").show();
-                $("#registerForm").hide();
-                $("#login").addClass("form-active");
-                $("#register").removeClass("form-active");
-            });
-            $("#register").click(function () {
-                $("#loginForm").hide();
-                $("#registerForm").show();
-                $("#login").removeClass("form-active");
-                $("#register").addClass("form-active");
-            });
-
-            // password hide-show
-            $("#eye-1").click(function () {
-                let type = $("#password").attr('type');
-                if (type == 'password') {
-                    $("#password").attr('type', 'text');
-                    $(this).html('<i class="ri-eye-off-line"></i>');
-                }
-                if (type == 'text') {
-                    $("#password").attr('type', 'password');
-                    $(this).html('<i class="ri-eye-line"></i>');
-                }
-            });
-            $("#eye-2").click(function () {
-                let type = $("#userPassword").attr('type');
-                if (type == 'password') {
-                    $("#userPassword").attr('type', 'text');
-                    $(this).html('<i class="ri-eye-off-line"></i>');
-                }
-                if (type == 'text') {
-                    $("#password1").attr('type', 'password');
-                    $(this).html('<i class="ri-eye-line"></i>');
-                }
-            });
-            $("#eye-3").click(function () {
-                let type = $("#confirmPassword").attr('type');
-                if (type == 'password') {
-                    $("#confirmPassword").attr('type', 'text');
-                    $(this).html('<i class="ri-eye-off-line"></i>');
-                }
-                if (type == 'text') {
-                    $("#confirmPassword").attr('type', 'password');
-                    $(this).html('<i class="ri-eye-line"></i>');
-
-                }
-            });
-
-            //password strength
-            $("#userPassword").keyup(function () {
-                let string = $(this).val();
-                var number = new RegExp("^(?=.*[0-9])");
-                var small = new RegExp("^(?=.*[a-z])");
-                var capital = new RegExp("^(?=.*[A-Z])");
-                var special = new RegExp("^(?=.*[@$!%*#?&])");
-                let sum = 0;
-                if (string.length > 7) {
-                    sum += 20;
-                }
-                if ($(this).val().match(special)) {
-                    sum += 25;
-                }
-                if ($(this).val().match(capital)) {
-                    sum += 15;
-                }
-                if ($(this).val().match(number)) {
-                    sum += 25;
-                }
-                if ($(this).val().match(small)) {
-                    sum += 15;
-                }
-                // increase width
-                $("#password-strength").animate({
-                    width: sum + "%"
-                }, 300);
-                // change colour by password strength
-                if (sum <= 40) {
-                    $("#password-strength").css('background-color', '#aa0000');
-                } else if (sum <= 70) {
-                    $("#password-strength").css('background-color', '#fbcb09');
-                } else if (sum == 100) {
-                    $("#password-strength").css('background-color', '#00cc00');
-                }
-                jQuery.validator.addMethod("strong", function(value, element) {
-                        return sum == 100;
-                    }, "Please enter a strong password date."
-                );
-            });
-
-            // register user
-            $("#registerForm").validate({
-                rules: {
-                    name: "required",
-                    email: {
-                        required: true,
-                        email: true,
-                    },
-                    mobileNo: {
-                        required: true,
-                        digits: true,
-                        minlength: 10,
-                    },
-                    password: {
-                        required: true,
-                        minlength: 8,
-                    },
-                    confirmPassword: {
-                        required : true,
-                        equalTo: '#userPassword',
-                    }
-                },
-                messages: {
-                    name: "Please enter your name.",
-                    email: {
-                        required: "Please enter your email.",
-                        email: "Please enter email correctly.",
-                    },
-                    mobileNo: {
-                        required: "Please enter your mobile number.",
-                        digits: "Mobile number must be in digits.",
-                        minlength: "Mobile number must contain 10 digits.",
-                    },
-                    password: {
-                        required: "Please enter your password",
-                        minlength: "Password must contain at least 8 characters.",
-                    },
-                    confirmPassword: {
-                        required : "Please enter confirm password.",
-                        equalTo: "Your password and confirm password doesn't match."
-                    }
-                },
-                errorClass: "text-danger",
-                errorPlacement: function(error, element) {
-                    if (element.attr("name") == "password") {
-                        error.insertAfter(element.parent().parent());
-                    } else {
-                        error.insertAfter(element.parent());
-                    }
-                },
-                submitHandler: function(form,e) {
-                    e.preventDefault();
-                    let data = new FormData(form);
-                    $.ajax({
-                        url : '{{route("register-user")}}',
-                        type : "POST",
-                        dataType : "JSON",
-                        data : data,
-                        cache : false,
-                        async : false,
-                        processData: false,
-                        contentType: false,
-                        success : function(data){
-                            if(data.status == 1){
-                                Swal.fire({
-                                    title: 'Success',
-                                    text: data.message,
-                                    icon: 'success',
-                                    timer: 2000,
-                                    showCancelButton: false,
-                                    showConfirmButton: false
-                                });
-                                window.location.reload();
-                            }else{
-                                Swal.fire({
-                                    title: 'Failed',
-                                    text: data.message,
-                                    icon: 'warning',
-                                    timer: 2000,
-                                    showCancelButton: false,
-                                    showConfirmButton: false
-                                })
-                            }
-                        }
-                    });
-                }
-            });
-
-            // login check
-            $("#loginForm").validate({
-                rules : {
-                    email : {
-                        required : true,
-                        email : true,
-                    },
-                    password : {
-                        required : true,
-                    }
-                },
-                messages : {
-                    email : {
-                        required : "Please enter your email address.",
-                        email : "Please enter email correctly.",
-                    },
-                    password : {
-                        required : "Please enter your password.",
-                    }
-                },
-                errorClass : "text-danger",
-                errorPlacement: function(error, element) {
-                    if (element.attr("type") == "password") {
-                        error.insertAfter(element.parent());
-                    } else {
-                        error.insertAfter(element.parent());
-                    }
-                },
-                submitHandler: function(form,e) {
-                    e.preventDefault();
-                    let data = new FormData(form);
-                    $.ajax({
-                        url : '{{route("login-user")}}',
-                        type : "POST",
-                        dataType : "JSON",
-                        data : data,
-                        cache : false,
-                        async : false,
-                        processData: false,
-                        contentType: false,
-                        success : function(data){
-                            if(data.status == 1){
-                                Swal.fire({
-                                    title: 'Success',
-                                    text: data.message,
-                                    icon: 'success',
-                                    timer: 2000,
-                                    showCancelButton: false,
-                                    showConfirmButton: false
-                                });
-                                window.location.reload();
-                            }else{
-                                Swal.fire({
-                                    title: 'Failed',
-                                    text: data.message,
-                                    icon: 'warning',
-                                    timer: 2000,
-                                    showCancelButton: false,
-                                    showConfirmButton: false
-                                })
-                            }
-                        }
-                    });
-                }
-            });
-
             $(document).on('click', "#remove-item", function () {
                 Swal.fire({
                     title: 'Success',
@@ -611,7 +357,6 @@
                     showConfirmButton: false
                 })
             });
-
             $(document).on('click', "#add-to-cart", function () {
                 Swal.fire({
                     title: 'Success',
@@ -622,7 +367,6 @@
                     showConfirmButton: false
                 })
             });
-
         });
 
     </script>
