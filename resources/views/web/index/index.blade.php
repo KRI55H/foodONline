@@ -119,9 +119,9 @@
                                         <span class="btn btn-primary">&#8377;{{$row->price}}/-</span>
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <button type="button" class="btn shadow-none" id="add-to-cart"
-                                                data-id="'.$row->id.'">Add To Cart
-                                        </button>
+                                        <a href="{{route('menu')}}" class="btn shadow-none" id="add-to-cart"
+                                                data-id="'.$row->id.'">Order Now
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -133,13 +133,13 @@
     </div>
 
     <!-- menu items -->
-    <div class="menu" id="menu">
+    <div class="menu " id="menu">
         <div class="menu-container">
             <div class="menu-head justify-content-center align-items-center">
                 <h1>Our Menu</h1>
             </div>
             <div class="menu-body">
-                <div class="row" id="menu-body">
+                <div class="row mb-3" id="menu-body">
                     @foreach($menuData as $row)
                         <div class="col-md-6 menu-card">
                             <div class="row">
@@ -162,9 +162,11 @@
                     @endforeach
                 </div>
             </div>
+            <div class="menu-card-footer p-3 d-flex align-items-end justify-content-end">
+                <a href="{{route('menu')}}" class="btn btn-primary"><label>VIEW MORE</label></a>
+            </div>
         </div>
     </div>
-
 
     <!-- about us -->
     <div class="row about-us-container" id="aboutus">
@@ -188,115 +190,7 @@
         </div>
     </div>
 
-    <!-- login model -->
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header border-0 row ps-4 pe-4">
-                    <button class="btn col-4 btn-form p-1 form-active shadow-none" id="login">LOGIN</button>
-                    <div class="col-1"></div>
-                    <button class="btn col-4 btn-form p-1 shadow-none" id="register">REGISTER</button>
-                    <div class="col-3 text-end">
-                        <button type="button" class="btn-primary ri-close-line text-dark rounded-circle"
-                                data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                </div>
-                <div class="modal-body border-0">
-                    <!-- login form -->
-                    <form id="loginForm" class="ps-2 pe-2">
-                        @csrf
-                        <h3 class="mb-3">Login</h3>
-                        <div class="mb-3">
-                            <div class="input-group border rounded-3">
-                                <span class="input-group-text shadow-none border-0" style="background-color: white;"><i
-                                        class="ri-mail-line"></i></span>
-                                <input type="email" class="form-control shadow-none border-0" id="emailAddress" name="email"
-                                       placeholder="Email Address" value="">
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <div class="input-group border rounded-3">
-                                <span class="input-group-text shadow-none border-0" style="background-color: white;"><i
-                                        class="ri-lock-2-line"></i></span>
-                                <input type="password" class="form-control shadow-none border-0" id="password"
-                                       name="password" placeholder="Password" value="">
-                                <span class="input-group-text shadow-none border-0" id="eye-1"
-                                      style="background-color: white;"><i class="ri-eye-line"></i></span>
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <div class="text-start col-6">
-                                <input type="checkbox" class="form-check-input shadow-none me-2" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Remember me</label>
-                            </div>
-                            <div class="text-end col-6">
-                                <a href="#" class="text-muted" style="text-decoration: none;">Forgot password?</a>
-                            </div>
-                        </div>
-                        <div class="text-end">
-                            <button type="submit" class="btn btn-primary w-50">Login</button>
-                        </div>
-                    </form>
-                    <!-- register form -->
-                    <form id="registerForm" class="ps-2 pe-2" style="display: none;" method="post">
-                        @csrf
-                        <h3 class="mb-3">Register</h3>
-                        <div class="mb-3">
-                            <div class="input-group border rounded-3">
-                                <span class="input-group-text shadow-none border-0" style="background-color: white;"><i
-                                        class="ri-pencil-line"></i></span>
-                                <input type="text" class="form-control shadow-none border-0" id="name" name="name"
-                                       placeholder="Name" value="">
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <div class="input-group border rounded-3">
-                                <span class="input-group-text shadow-none border-0" style="background-color: white;"><i
-                                        class="ri-mail-line"></i></span>
-                                <input type="email" class="form-control shadow-none border-0" id="email" name="email"
-                                       placeholder="Email Address" value="">
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <div class="input-group border rounded-3">
-                                <span class="input-group-text shadow-none border-0" style="background-color: white;"><i
-                                        class="ri-pencil-line"></i></span>
-                                <input type="text" class="form-control shadow-none border-0" id="mobileNo" name="mobile_no"
-                                       placeholder="Mobile Number" value="" maxlength="10">
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <div>
-                                <div class="input-group border rounded-3">
-                                    <span class="input-group-text shadow-none border-0" style="background-color: white;"><i class="ri-lock-2-line"></i></span>
-                                    <input type="password" class="form-control shadow-none border-0" id="userPassword"
-                                           name="password" placeholder="Password" value="">
-                                    <span class="input-group-text shadow-none border-0" id="eye-2"
-                                          style="background-color: white;"><i class="ri-eye-line"></i></span>
-                                </div>
-                                <div class="mt-1 password-strength-background">
-                                    <div class="password-strength" id="password-strength"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <div class="input-group border rounded-3">
-                                <span class="input-group-text shadow-none border-0" style="background-color: white;"><i
-                                        class="ri-lock-2-line"></i></span>
-                                <input type="password" class="form-control shadow-none border-0" id="confirm_password"
-                                       name="confirm_password" placeholder="Confirm Password" value="">
-                                <span class="input-group-text shadow-none border-0" id="eye-3"
-                                      style="background-color: white;"><i class="ri-eye-line"></i></span>
-                            </div>
-                        </div>
-                        <div class="text-end">
-                            <button type="submit" id="registerBtn" class="btn btn-primary w-50"><i class="ri-loader-2-line spinner" style="display: none"></i>Register</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+
 @endsection
 @section("js")
     <!-- extra scripts -->
@@ -344,29 +238,6 @@
                     items: 2,
                 }
             }
-        });
-
-        $(document).ready(function () {
-            $(document).on('click', "#remove-item", function () {
-                Swal.fire({
-                    title: 'Success',
-                    text: 'Item has been removed successfully.',
-                    icon: 'success',
-                    timer: 2000,
-                    showCancelButton: false,
-                    showConfirmButton: false
-                })
-            });
-            $(document).on('click', "#add-to-cart", function () {
-                Swal.fire({
-                    title: 'Success',
-                    text: 'Item has been added to cart.',
-                    icon: 'success',
-                    timer: 2000,
-                    showCancelButton: false,
-                    showConfirmButton: false
-                })
-            });
         });
 
     </script>

@@ -32,7 +32,7 @@
                 </div>
             </div>
         </div>
-        <div class="footer-copyright text-center text-light py-2"> Copyright © 2020-21 <a href="/"> foodONline.com</a>
+        <div class="footer-copyright text-center text-light py-2"> Copyright © 2022 <a href="/"> foodONline.com</a>
         </div>
     </div>
 </footer>
@@ -83,7 +83,7 @@
                         </div>
                     </div>
                     <div class="text-end">
-                        <button type="submit" class="btn btn-primary w-50">Login</button>
+                        <button type="submit" class="btn btn-primary w-50" id="LoginBtn"><i class="ri-loader-2-line spinner" style="display: none"></i>Login</button>
                     </div>
                 </form>
                 <!-- register form -->
@@ -110,7 +110,7 @@
                         <div class="input-group border rounded-3">
                                 <span class="input-group-text shadow-none border-0" style="background-color: white;"><i
                                         class="ri-pencil-line"></i></span>
-                            <input type="text" class="form-control shadow-none border-0" id="mobile_no" name="mobile_no"
+                            <input type="text" class="form-control shadow-none border-0" id="mobileNo" name="mobile_no"
                                    placeholder="Mobile Number" value="" maxlength="10">
                         </div>
                     </div>
@@ -132,14 +132,14 @@
                         <div class="input-group border rounded-3">
                                 <span class="input-group-text shadow-none border-0" style="background-color: white;"><i
                                         class="ri-lock-2-line"></i></span>
-                            <input type="password" class="form-control shadow-none border-0" id="confirmPassword"
-                                   name="confirmPassword" placeholder="Confirm Password" value="">
+                            <input type="password" class="form-control shadow-none border-0" id="confirm_password"
+                                   name="confirm_password" placeholder="Confirm Password" value="">
                             <span class="input-group-text shadow-none border-0" id="eye-3"
                                   style="background-color: white;"><i class="ri-eye-line"></i></span>
                         </div>
                     </div>
                     <div class="text-end">
-                        <button type="submit" class="btn btn-primary w-50">Register</button>
+                        <button type="submit" id="registerBtn" class="btn btn-primary w-50"><i class="ri-loader-2-line spinner" style="display: none"></i>Register</button>
                     </div>
                 </form>
             </div>
@@ -249,7 +249,6 @@
 
         }
     });
-
     $("#eye-3").click(function () {
         let type = $("#confirm_password").attr('type');
         if (type == 'password') {
@@ -378,19 +377,11 @@
     // login check
     $("#loginForm").validate({
         rules : {
-            email : {
-                required : true,
-                email : true,
-            },
-            password : {
-                required : true,
-            }
+            email : { required : true, email : true },
+            password : { required : true }
         },
         messages : {
-            email : {
-                required : "Please enter your email address.",
-                email : "Please enter email correctly.",
-            },
+            email : { required : "Please enter your email address.", email : "Please enter email correctly." },
             password : {
                 required : "Please enter your password.",
             }
@@ -412,9 +403,13 @@
                 dataType : "JSON",
                 data : data,
                 cache : false,
-                async : false,
+                async : true,
                 processData: false,
                 contentType: false,
+                beforeSend: function () {
+                    $("#LoginBtn").attr('disabled','disabled');
+                    $(".spinner").show();
+                },
                 success : function(data){
                     if(data.status == 1){
                         Swal.fire({
@@ -425,6 +420,8 @@
                             showCancelButton: false,
                             showConfirmButton: false
                         });
+                        $("#LoginBtn").removeAttr('disabled');
+                        $(".spinner").hide();
                         window.location.reload();
                     }else{
                         Swal.fire({
@@ -435,6 +432,8 @@
                             showCancelButton: false,
                             showConfirmButton: false
                         })
+                        $("#LoginBtn").removeAttr('disabled');
+                        $(".spinner").hide();
                     }
                 }
             });

@@ -17,7 +17,7 @@ class IndexController extends Controller
     // view index page
     public function index(Request $request){
         $popularData = Product::where(['is_active'=>"1",'is_popular'=>"1",'is_deleted'=>"0"])->get();
-        $menuData = Product::where('is_deleted',"0")->get();
+        $menuData = Product::where('is_deleted',"0")->limit(6)->get();
         return view('web.index.index')->with(['popularData'=>$popularData,'menuData'=>$menuData]);
     }
 

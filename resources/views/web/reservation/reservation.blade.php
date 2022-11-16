@@ -1,7 +1,5 @@
 @extends('web.master')
-@section('title')
-    <title>Reservation | foodONline</title>
-@endsection
+@section('title',"Reservation | foodONline")
 @section('content')
     <div class="register-form">
         <div class="row form-container">
@@ -58,11 +56,15 @@
                                          id="table-image">
                                 </div>
                                 <div class="text-end form-group d-block">
-                                    <button type="submit" class="btn shadow-none register-btn">Book Table</button>
+                                    <button type="submit" id="bookTableBtn" class="btn shadow-none register-btn"><i class="ri-loader-2-line spinner" style="display: none"></i>Book Table</button>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <p class="mt-2">
+                        <span class="text-danger fw-bold">* NOTE : </span>
+                        Rs. 100/- booking charge will be applied per person.
+                    </p>
                 </form>
             </div>
         </div>
@@ -97,34 +99,16 @@
         // regiser table
         $("#regiserTable").validate({
             rules : {
-                name : {
-                    required : true,
-                },
-                mobile_no : {
-                    required : true,
-                    digits : true,
-                },
-                special_ocation : {
-                    required : true,
-                },
-                date : {
-                    required : true,
-                }
+                name : { required : true },
+                mobile_no : { required : true, digits : true },
+                special_ocation : { required : true },
+                date : { required : true }
             },
             messages : {
-                name : {
-                    required : "Please enter your name.",
-                },
-                mobile_no : {
-                    required : "Please enter mobile number.",
-                    digits : "Please enter numbers only.",
-                },
-                special_ocation : {
-                    required : "Please select ocation type.",
-                },
-                date : {
-                    required : "Please select reservation date.",
-                },
+                name : { required : "Please enter your name." },
+                mobile_no : { required : "Please enter mobile number.", digits : "Please enter numbers only." },
+                special_ocation : { required : "Please select ocation type." },
+                date : { required : "Please select reservation date." },
             },
             errorClass : "text-danger",
             errorPlacement: function(error, element) {
@@ -143,9 +127,13 @@
                     dataType : "JSON",
                     data : data,
                     cache : false,
-                    async : false,
+                    async : true,
                     processData: false,
                     contentType: false,
+                    beforeSend: function () {
+                        $("#bookTableBtn").attr('disabled','disabled');
+                        $(".spinner").show();
+                    },
                     success : function(data){
                         if(data.status == 1){
                             Swal.fire({
@@ -156,6 +144,8 @@
                                 showCancelButton: false,
                                 showConfirmButton: false
                             });
+                            $("#bookTableBtn").removeAttr('disabled');
+                            $(".spinner").hide();
                             window.location.href = "{{route('/')}}";
                         }else{
                             Swal.fire({
@@ -165,7 +155,9 @@
                                 timer: 2000,
                                 showCancelButton: false,
                                 showConfirmButton: false
-                            })
+                            });
+                            $("#bookTableBtn").removeAttr('disabled');
+                            $(".spinner").hide();
                         }
                     }
                 });

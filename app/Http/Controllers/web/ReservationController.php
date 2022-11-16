@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Stripe\Charge;
+use Stripe\Stripe;
 
 class ReservationController extends Controller
 {
@@ -22,12 +24,15 @@ class ReservationController extends Controller
             'name'=>'required',
             'mobile_no'=>'required|digits:10',
             'number_of_person'=>'required',
-            'date'=>'required|before_or_equal:'.Carbon::now()->addDays(10).'|after_or_equal:'.Carbon::now(),
+            'date'=>'required|before_or_equal:'.Carbon::now()->addDays(10).'|after_or_equal:'.Carbon::yesterday(),
             'special_ocation'=>'required',
         ]);
         if($validate->fails()){
             return response()->json(['status'=>0,'message'=>$validate->errors()->first()]);
-        }else{
+        }
+        else{
+
+
             $input = $request->all();
             $input['user_id'] = Auth::guard('web')->user()->id;
             $insert = new Reservation();

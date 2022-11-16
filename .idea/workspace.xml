@@ -2,26 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e341d24-9bad-4d5d-8849-274c847ed411" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/web/orders/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/foodONline.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/foodONline.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/web/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/web/IndexController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/web/ReservationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/web/ReservationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Cart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Orders.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Reservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Reservation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/web/index/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/web/index/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/web/layout/footer-links.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/web/layout/footer-links.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/web/layout/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/web/layout/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/web/layout/header-links.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/web/layout/header-links.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/web/layout/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/web/layout/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/web/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/web/master.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/web/reservation/reservation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/web/reservation/reservation.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,6 +139,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
       <path value="$PROJECT_DIR$/vendor/laravel/framework" />
       <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/vendor/stripe/stripe-php" />
     </include_path>
   </component>
   <component name="ProjectId" id="2Cwb60ZNN915LxjnnD6HPA4vl0d" />
@@ -230,7 +221,8 @@
       <workItem from="1666017169114" duration="37000" />
       <workItem from="1666017737495" duration="15000" />
       <workItem from="1668518991997" duration="82000" />
-      <workItem from="1668519653127" duration="3788000" />
+      <workItem from="1668519653127" duration="4048000" />
+      <workItem from="1668566720320" duration="5745000" />
     </task>
     <servers />
   </component>
