@@ -12,10 +12,10 @@
             <div class="col-md-4 text-center mb-4">
                 <h3 class="mb-3">FOLLOW US</h3>
                 <div class="d-flex align-items-center justify-content-center">
-                    <a href="#" class="ri-facebook-fill btn btn-primary m-1"></a>
-                    <a href="#" class="ri-twitter-fill btn btn-primary m-1"></a>
-                    <a href="#" class="ri-youtube-fill btn btn-primary m-1"></a>
-                    <a href="#" class="ri-instagram-fill btn btn-primary ms-2 me-1"></a>
+                    <a href="https://www.facebook.com" target="_blank" class="ri-facebook-fill btn btn-primary m-1"></a>
+                    <a href="https://www.twitter.com" target="_blank" class="ri-twitter-fill btn btn-primary m-1"></a>
+                    <a href="https://www.youtube.com/c/kristenworld" target="_blank" class="ri-youtube-fill btn btn-primary m-1"></a>
+                    <a href="https://www.instagram.com" target="_blank" class="ri-instagram-fill btn btn-primary ms-2 me-1"></a>
                 </div>
             </div>
             <div class="col-md-4 text-center mb-4">
@@ -32,7 +32,7 @@
                 </div>
             </div>
         </div>
-        <div class="footer-copyright text-center text-light py-2"> Copyright © 2022 <a href="/"> foodONline.com</a>
+        <div class="footer-copyright text-center text-light py-2"> Copyright © 2022 <a href="{{route("/")}}"> foodONline.com</a>
         </div>
     </div>
 </footer>
@@ -202,7 +202,7 @@
                         <a href="{{route('logout')}}" class="btn btn-primary w-100">Logout</a>
                     </div>
                     <div class="col-md-6 col-xs-12 mb-3">
-                        <button type="submit" class="btn btn-primary w-100">Edit</button>
+                        <button type="submit" class="btn btn-primary w-100" id="EditProfile"><i class="ri-loader-2-line spinner" style="display: none"></i>Edit</button>
                     </div>
                 </div>
             </form>
@@ -443,22 +443,12 @@
     // update profile
     $("#editProfile").validate({
         rules : {
-            name : {
-                'required' : true
-            },
-            mobile_no : {
-                'required' : true,
-                'digits' : true,
-            }
+            name : { 'required' : true },
+            mobile_no : { 'required' : true,'digits' : true }
         },
         messages : {
-            name : {
-                'required' : "Please enter your name."
-            },
-            mobile_no : {
-                'required' : "Please enter your mobile number.",
-                'digits' : "Please write digits in mobile number.",
-            }
+            name : { 'required' : "Please enter your name." },
+            mobile_no : { 'required' : "Please enter your mobile number.",'digits' : "Please write digits in mobile number." }
         },
         errorClass : "text-danger",
         errorPlacement: function(error, element) {
@@ -477,9 +467,13 @@
                 dataType : "JSON",
                 data : data,
                 cache : false,
-                async : false,
+                async : true,
                 processData: false,
                 contentType: false,
+                beforeSend : function () {
+                    $("#EditProfile").attr('disabled','disabled');
+                    $(".spinner").show();
+                },
                 success : function(data){
                     if(data.status == 1){
                         Swal.fire({
@@ -490,6 +484,8 @@
                             showCancelButton: false,
                             showConfirmButton: false
                         });
+                        $("#EditProfile").removeAttr('disabled');
+                        $(".spinner").hide();
                         window.location.reload();
                     }else{
                         Swal.fire({
@@ -499,7 +495,9 @@
                             timer: 2000,
                             showCancelButton: false,
                             showConfirmButton: false
-                        })
+                        });
+                        $("#EditProfile").removeAttr('disabled');
+                        $(".spinner").hide();
                     }
                 }
             });

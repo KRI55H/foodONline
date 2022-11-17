@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e341d24-9bad-4d5d-8849-274c847ed411" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/foodONline.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/foodONline.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/web/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/web/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/web/ReservationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/web/ReservationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/web/index/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/web/index/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/web/MenuController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/web/MenuController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/web/layout/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/web/layout/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/web/reservation/reservation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/web/reservation/reservation.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/web/menu/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/web/menu/menu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/web/orders/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/web/orders/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,7 +217,11 @@
       <workItem from="1666017737495" duration="15000" />
       <workItem from="1668518991997" duration="82000" />
       <workItem from="1668519653127" duration="4048000" />
-      <workItem from="1668566720320" duration="5745000" />
+      <workItem from="1668566720320" duration="5989000" />
+      <workItem from="1668583082384" duration="58000" />
+      <workItem from="1668585917948" duration="3000" />
+      <workItem from="1668589466183" duration="1142000" />
+      <workItem from="1668671606061" duration="1558000" />
     </task>
     <servers />
   </component>

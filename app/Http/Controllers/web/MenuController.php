@@ -25,9 +25,10 @@ class MenuController extends Controller
             }
             $cartData = Product::select('product.name','product.price','c.total','c.discount','c.delivery_charge','c.qty')
                 ->join('cart as c','c.product_id','product.id')
-                ->where(['is_active'=>'1','is_deleted'=>'0','user_id'=>Auth::guard('web')->user()->id,'status'=>0])
+                ->where(['is_active'=>'1','is_deleted'=>'0','user_id'=>Auth::guard('web')->user()->id,'status'=>'0'])
                 ->get();
-        }else{
+        }
+        else{
             $main = $productData;
         }
         return view('web.menu.menu')->with([
@@ -148,7 +149,7 @@ class MenuController extends Controller
                         </div>
                         <div class="card-footer">';
                 if(auth()->guard('web')->check() && sizeof($cart) > 0){
-                    $data .= '<button class="btn btn-primary" id="orderNow">PLACE ORDER</button>';
+                    $data .= '<button class="btn btn-primary" id="orderNow"><i class="ri-loader-2-line spinner" style="display: none"></i>PLACE ORDER</button>';
                 }else{
                     $data .='<button class="btn btn-primary" disabled>PLACE ORDER</button>';
                 }

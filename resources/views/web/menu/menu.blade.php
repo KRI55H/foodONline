@@ -1,7 +1,5 @@
 @extends('web.master')
-@section('title')
-    <title>foodONline</title>
-@endsection
+@section('title',"Menu | foodONline")
 @section('content')
 <div class="container-fluid bg-light">
     <div class="menu-body">
@@ -76,6 +74,7 @@
                             @else
                                 <img src="{{asset('public/assets/img/no-item.png')}}">
                             @endif
+
                             <div class="row mt-3 mb-1">
                                 <span class="col-md-9 fs-7">Sub total</span>
                                 <span class="col-md-3 fs-7 text-end subtotal">&#8377; {{$subtotal}}</span>
@@ -95,7 +94,7 @@
                         </div>
                         <div class="card-footer">
                             @if(auth()->guard('web')->check() && sizeof($cart) > 0)
-                                <button class="btn btn-primary" id="orderNow">PLACE ORDER</button>
+                                <button class="btn btn-primary" id="orderNow"><i class="ri-loader-2-line spinner" style="display: none"></i>PLACE ORDER</button>
                             @else
                                 <button class="btn btn-primary" disabled>PLACE ORDER</button>
                             @endif
@@ -201,6 +200,10 @@
                     '_token' : "{{csrf_token()}}",
                     'total' : $(".total").data('total')
                 },
+                beforeSend : function () {
+                    $("#orderNow").attr('disabled','disabled');
+                    $(".spinner").show();
+                },
                 success : function(data){
                     if(data.status == 1){
                         Swal.fire({
@@ -212,6 +215,8 @@
                             showConfirmButton: false
                         });
                         setTimeout(function (){
+                            $("#orderNow").removeAttr('disabled');
+                            $(".spinner").hide();
                             window.location.href = data.url;
                         },2000)
                     }else{
@@ -223,6 +228,8 @@
                             showCancelButton: false,
                             showConfirmButton: false
                         });
+                        $("#orderNow").removeAttr('disabled');
+                        $(".spinner").hide();
                     }
                 }
             });

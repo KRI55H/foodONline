@@ -1,7 +1,5 @@
 @extends('web.master')
-@section('title')
-    <title>foodONline</title>
-@endsection
+@section('title',"Order | foodONline")
 @section('content')
     <div class="menu" id="menu">
         <div class="menu-container ">
